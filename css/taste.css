@@ -1,0 +1,83 @@
+
+.header{
+    font-size: 0;
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+.header img{
+    width: 100%;
+}
+.content{
+    font-size: 14px;
+    background-color: #F5FEFD;
+    padding-bottom: 1rem;
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.spcil-banner>img{
+    width: 100%;
+    display: block;
+    margin-bottom: .5em;
+}
+/* 酒水饮料 */
+.productList ul{
+   width: 100%;
+}
+.productList ul li{
+    display: inline-block;
+    background-color: #fff;
+    width: 47%;
+    padding: 0 0.3em 0.3em 0.3em;
+    border: 1px solid #e9e9e9;
+    box-sizing: border-box;
+    position: relative;
+    margin-bottom: 0.5em;
+    margin-left: 0.5em
+}
+.productList ul li img{
+    width: 100%;
+}
+.productList ul li p{
+    font-size: 0.6rem;
+}
+.productList ul li p{
+    margin-top: 10px
+}
+.productList ul li .price{
+    color: #fa6400;
+    margin-top: 25px;
+    font-size: 0.8rem;
+    padding-bottom: 1.6em;
+}
+.productList ul li p span:nth-child(2){
+    font-size: 0.7142em;
+    height: 1.3em;
+    line-height: 1.15em;
+    box-sizing: border-box;
+    border: #ff6600 1px solid;
+    color: #ff6600;
+    background: #fff;
+    margin-right: 0.128em;
+    padding: 0 0.192em;
+    border-radius: 0.0854em;
+    position: relative;
+    top: -3px;
+    left: 4px;
+}
+.productList ul li div{
+    font-size: 12px;
+    height:20px;
+    line-height: 20px;
+    background-color: #fc5000;
+    padding:0 3px;
+    border-radius: 0.128em;
+    text-align: center;
+    width: 49px;
+    color: white;
+    position: absolute;
+    right:0.5em;
+    bottom:0.5em;
+}

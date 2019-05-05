@@ -1,0 +1,154 @@
+body {
+    min-width: 320px;
+    font-size: 1rem;
+    color: #000;
+    margin: 0 auto;
+    -webkit-text-size-adjust: none;
+    -webkit-text-size-adjust: 100% !important;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+#outher {
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: #fff;
+    width: 100%;
+}
+.search {
+    width: 14.6347rem;
+    height: 1.28rem;
+    margin: 0.2134rem 0.6827rem;
+    background: url(../imgs/classfiy-search.png) no-repeat;
+    background-size: 100%;
+}
+#content {
+    width: 100%;
+}
+#content #left-nav {
+    width: 2.9867rem;
+    /* background-color: rgb(22, 20, 20); */
+}
+#left-nav .n-list {
+    width: 2.9867rem;
+    height: 2.9867rem;
+    background-color: #f9f9f9;
+    text-align: center;
+    position: relative;
+}
+#left-nav .n-list .n-ico.active {
+    display: block;
+}
+#left-nav .n-list .n-ico {
+    width: 0.2134rem;
+    height: 1.0454rem;
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
+    background-color: #76ac01;
+    display: none;
+}
+#left-nav .n-list .n-title {
+    line-height: 0.8534rem;
+    padding: 0.4rem 0.8107rem;
+    font-size: 0.5974rem;
+    color: #414141;
+}
+#right-item{
+    width: 13.0134rem;
+}
+#right-item .item-list .i-banner{
+    margin-top: 0.512rem;
+    margin-left: 0.7467rem;
+    width: 11.52rem;
+    height: 4.2667rem;
+}
+#right-item .item-list .i-banner img {
+    width: 100%;
+    height: 100%;
+}
+#right-item .item-list .i-name{
+    width: 4.0534rem;
+    height: 0.8534rem;
+    line-height: 0.8534rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.768rem;
+    font-size: 0.5974rem;
+    color: #999999;
+    background: url(../imgs/classfiy-right-name.png) no-repeat;
+    background-size: 100%;
+}
+#right-item .item-list .i-list .i-item{
+    float: left;
+    margin-top: 0.64rem;
+    margin-bottom: 0.9387rem;
+    width: 4.3094rem;
+    overflow: hidden;
+} 
+a{
+    text-decoration: none;    
+}
+#right-item .item-list .i-list .i-item .i-logo{
+    width: 2.3467rem;
+    height: 2.3467rem;
+    margin-left: 1.024rem;
+    margin-right: 0.9387rem;
+} 
+#right-item .item-list .i-list .i-item .i-logo img{
+    width: 100%;
+    height: 100%;
+}
+#right-item .item-list .i-list .i-item .i-title{
+    text-align: center;
+    font-size: 0.512rem;
+    color: #7e7e7e;
+    margin-top: 0.2134rem;
+    line-height: 0.64rem;
+    margin-right: 0.0854rem;
+    height: 0.64rem;
+    overflow: hidden;
+    padding-left: 0.2134rem;
+    padding-right: 0.2134rem;
+}
+
+
+
+
+
+
+/* 底部 */
+#menu-tab{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    z-index: 999;
+    text-align: center;
+    background: #fff;
+    border-top: 1px solid #eaeaea;
+    white-space: nowrap;
+}
+#menu-tab .menu-item{
+    float: left;
+    width: 20%;
+    padding: 0.2987rem 0;
+    text-align: center;
+    font-size: 0.4267rem;
+    color: #000;
+}
+#menu-tab .menu-item i{
+    height: 0.9814rem;
+    display: block;
+    margin-bottom: 0.1067rem;
+}
+#menu-tab .menu-item i img{
+    width: 0.9814rem;
+    height: 0.9814rem;
+    border: 0;
+    margin: 0 auto;
+}

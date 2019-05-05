@@ -1,0 +1,397 @@
+.omit1{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.omit2{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.floor {
+    margin-bottom: 0.5547rem;
+    overflow: hidden;
+    position: relative;
+}
+.floor .title{
+    height: 2.6454rem;
+    line-height: 2.6454rem;
+    font-size: 0.6827rem;
+    color: #000;
+    text-align: center;
+}
+.floor-right{
+    display: inline-block;
+    width: 0.6187rem;
+    height: 0.6187rem;
+    margin-left: 0.4267rem;
+    margin-bottom: -0.064rem;
+    background: url(../imgs/floor-right.png) no-repeat center;
+    background-size: 100%;
+}
+.item-img{
+    width: 4.608rem;
+    height: 4.608rem;
+}
+.item-inf{
+    text-align: center;
+}
+.item-lable{
+    height: 0.576rem;
+    padding-top: 0.2134rem;
+    font-size: 0.384rem;
+}
+img{
+    width: 100%;
+}
+.discount{
+    display: inline-block;
+    height: 0.576rem;
+    line-height: 0.576rem;
+    padding: 0 0.256rem;
+    background-color: #f5724b;
+    border-radius: 0.064rem;
+    font-size: 0.384rem;
+    color: #ffffff;
+}
+.swiper-pagination-bullet{
+    width: 0.1707rem;
+    height: 0.1707rem;
+    background-color: #000000;
+    opacity: 0.2;
+    border-radius: 0;
+}
+.swiper-pagination-bullet-active{
+    opacity: 0.5;
+}
+.item-name{
+    font-size: 0.512rem;
+    color: #000000;
+    margin-top: 0.1067rem;
+}
+.item-price{
+    font-size: 0.512rem;
+    color: #ff8200;
+    margin-top: 0.1067rem;
+}
+.content{
+    min-width: 320px;
+    max-width: 750px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    position: relative;
+}
+.top-box{
+    position: fixed;
+    max-width: 16rem;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    z-index: 1002;
+    overflow: hidden;
+}
+.search-box{
+    height: 1.344rem;
+    padding: 0.384rem 0.6827rem;
+    font-size: 0.64rem;
+    color: #000000;
+}
+.search-box .address{
+    width: 2.56rem;
+    height: 1.344rem;
+    line-height: 1.344rem;
+    overflow: hidden;
+}
+.total-tab-box{
+    position: relative;
+    width: 14.5067rem;
+    height: 1.4934rem;
+    margin-left: 0.3rem;
+}
+.total-tab{
+    /* height: 1rem; */
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.total-tab .swiper-wrapper{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    box-sizing: content-box;
+}
+.total-tab .swiper-slide{
+    width: 2.4747rem !important;
+    height: 1.4934rem;
+    margin: 0 0.448rem;
+    padding: 0.192rem 0 0.384rem;
+    font-size: 0.5974rem;
+    color: #000000;
+    text-align: center;
+    box-sizing: border-box;
+}
+.total-tab li:first-child{
+    margin-left:0.512rem;
+    color: #0f9029;
+    border-bottom: 0.128rem solid #0f9029;
+}
+.total-tab-box .fenlei{
+    position: absolute;
+    right: -1.4933rem;
+    top: 0;
+    width: 2.2401rem;
+    height: 1.4934rem;
+    z-index: 2;
+    background: url(../imgs/fenlei.png) no-repeat center;
+    background-size: 100%;
+    /* background-color: white; */
+}
+.top-banner{
+    padding-top: 3.5rem;
+}
+.top-banner img{
+    width: 100%;
+}
+
+.label{
+    padding: 0.448rem 0 0.4694rem;
+    font-size: 0.5547rem;
+    color: #747474;
+    text-align: center;
+}
+.label span{
+    margin-left: 0.4694rem;
+}
+.label span:first-child{
+    margin-left: 0;
+}
+.label i{
+    display: inline-block;
+    width: 0.64rem;
+    height: 0.64rem;
+    margin-right: 0.2987rem;
+    margin-bottom: -0.0853rem;
+}
+.label i img{
+    width: 100%;
+    position: relative;
+    top:0.1rem;
+}
+.menu-box{
+    padding: 0.576rem 0 1.2374rem;
+    text-align: center;
+}
+.menu-box .swiper-slide {
+    width: 3.2rem;
+}
+.menu-box img {
+    display: block;
+    width: 1.9414rem;
+    height: 1.9414rem;
+    margin: 0 auto 0.4907rem;
+}
+.menu-box span {
+    display: block;
+    width: 100%;
+    font-size: 0.512rem;
+    color: #000000;
+}
+.kuaibao{
+    padding: 0.2774rem 0.6827rem 0.2774rem;
+    overflow: hidden;
+}
+.kuaibao .swiper-container{
+    height: 100%;
+}
+.kuaibao .news{
+    width: 3.1147rem;
+    height: 0.9387rem;
+    margin-right: 0.1707rem;
+    display: inline-block;
+}
+.kuaibao .newscontent{
+    display: inline-block;
+    width: 9.6667rem;
+    height: 0.6334rem;
+    position: relative;
+    top: -0.1234rem;
+    padding-left: 0.4267rem;
+    overflow: hidden;
+    font-size: 0.512rem;
+    color: #747474;
+    border-left: 0.0427rem solid #747474;
+}
+.kuaibao .newscontent .swiper-slide{
+    height: 0.612rem;
+    line-height: 0.612rem;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.floor .item ul{
+    padding: 0 0.448rem;
+    overflow: hidden;
+}
+.floor .item li{
+    float: left;
+    width: 4.608rem;
+    height: 8.2134rem;
+    margin: 0 0.2134rem;
+}
+.floor .title{
+    height: 2.6454rem;
+    line-height: 2.6454rem;
+    font-size: 0.6827rem;
+    color: #000;
+    text-align: center;
+}
+.banner-one{
+    width: 100%;
+}
+.banner-one a{
+    width: 50%;
+    display: inline-block;
+    float: left;
+}
+.banner-one img{
+    width: 100%;
+}
+.banner-two a img{
+    width: 100%;
+}
+.banner-three{
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 0.5547rem;
+}
+.banner-three .swiper-slide .name,.banner-three .swiper-slide .describe{
+    margin-top: 0.448rem;
+    padding-left: 0.256rem;
+    font-size: 0.5974rem;
+    color: #000000;
+}
+.banner-three img{
+    border-radius: 0.128rem;
+}
+.banner-three .more{
+    width: 1rem;
+    height: 2.5rem;
+    font-size: 0.5974rem;
+    color: #000000;
+    margin-top:2rem;
+}
+/* brand */
+.brand{
+    position: relative;
+}
+.brand .brand-img{
+    width: 100%;
+}
+.brand .brand-logo{
+    position: absolute;
+    top: 5.376rem;
+    left: 0.704rem;
+    width: 2.4747rem;
+    height: 2.4747rem;
+
+}
+.brand .brand-inf{
+    padding-left:3.4747rem;
+}
+.brand .brand-inf .brand-name{
+    font-size: 0.5974rem;
+    color: #000000;
+}
+.brand .brand-inf .brand-describe{
+    margin-top: 0.1707rem;
+    font-size: 0.512rem;
+    color: #949494;
+}
+.brand-product{
+    padding: 0 0.4694rem;
+}
+.brand-product .swiper-slide{
+    width: 4.2667rem;
+    margin: 0 0.1707rem;
+}
+.brand .swiper-slide img{
+    width: 4.2667rem;
+    height: 4.2667rem;
+}
+.brand .swiper-slide .brand-p-name{
+    font-size: 0.4694rem;
+    color: #000000;
+}
+.brand .swiper-slide .brand-p-describe{
+    margin-top: 0.0854rem;
+    font-size: 0.4267rem;
+    color: #5c5c5c;
+}
+.brand .swiper-slide .brand-p-price{
+    font-size: 0.512rem;
+    color: #ff8200;
+    margin-top: 0.448rem;
+}
+.brand .swiper-slide .brand-vip-price{
+    margin-top: 0.1707rem;
+    display: inline-block;
+    padding: 0 0.0427rem;
+    height: 0.5974rem;
+    line-height: 0.5547rem;
+    font-size: 0.384rem;
+    color: #ff8200;
+    border: 1px solid #ff8200;
+    box-sizing: border-box;
+    border-radius: 0.0854rem;
+}
+.banner-six{
+    padding:0 0.4707rem;
+}
+.banner-six img{
+    width: 6.912rem;
+    height: 9.6427rem;
+    border-radius: 0.128rem;
+}
+.banner-six .item-name{
+    margin-top: 0.5974rem;
+    font-size: 0.512rem;
+    color: #000000;
+}
+.banner-six .item-describe{
+    margin-top: 0.2134rem;
+    margin-bottom: 1.088rem;
+    font-size: 0.512rem;
+    color: #777777;
+}
+/* .ht-item-name{
+    font-size: 0.4694rem;
+    color: #000000;
+} */
+.ht-item-describe{
+    padding: 0.2134rem 0.6827rem 0.9387rem;
+    font-size: 0.512rem;
+    color: #979797;
+}
+.brand-product .brand-p-price{
+    font-size: 0.512rem;
+    color: #ff8200;
+    margin-top: 0.448rem;
+}
+.ht-line1{
+    width: 16rem;
+    height: 0.384rem;
+    background-color: #f8f8f8;
+}
+.brand-p-name{
+    font-size: 0.4694rem;
+    color: #000000;
+}

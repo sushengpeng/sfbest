@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/global.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/shoppingcart.css">
+</head>
+
+<body>
+    <!-- 登录前显示的页面 -->
+    <div class="carEmptyPage">
+        <div class="title">
+            购物车
+        </div>
+        <div class="main">
+            <div class="server">
+                <img src="imgs/cart-none.png" alt="">
+            </div>
+            <div class="nostore-con">
+                <p>购物车无商品，可能是您尚未登录</p>
+            </div>
+            <div class="shopping-btn clearfix">
+                <div class="nostore-btn fl">
+                    <a href="###">登录</a>
+                </div>
+                <div class="nostore-btn click fr">
+                    <a href="###">去逛逛</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="carFullPage">
+
+
+        <!-- 购物车加入商品显示的页面 -->
+        <div class="cartpage">
+            <div class="new-header">
+                <div class="cart-addr">
+                    <div class="addrArea">
+                        <div class="text">
+                            <div>
+                                <i></i>
+                                <span>北京北京东城区</span>
+                                <b></b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="goEdit" class="p-edit pro-del-all">编辑</div>
+
+            </div>
+
+            <div class="cart-login clearfix">
+                <span>登录后您购物车中的商品将被永久保存<a href="###" class="login-btn fr">立即登录</a></span>
+            </div>
+        </div>
+        <!--cart-list-item-->
+
+        <div class="prolist">
+            <div id="wrapper">
+                <div id="scroller">
+                    <div class="title">
+                        <div class=" fl choice cat-check normal">
+                            <span class="icon1 checked cbbox1"></span>
+                        </div>
+                        <span class="name">优选普通商品</span>
+                    </div>
+                    <ul class="prolistCont">
+                        <li class="item clearfix">
+                            <div class="left fl">
+                                <span class="icon1 checked cbbox2"></span>
+                            </div>
+                            <div class="right clearfix">
+                                <div class="listimg fl">
+                                    <img src="imgs/apple.jpg">
+                                </div>
+                                <div class="listname fl">
+                                    <div class="p-name">
+                                        <a href="###">誉福园 山东烟台栖霞红富士苹果5斤装 果径80以上 80一85mm</a>
+                                    </div>
+                                    <div class="p-message clearfix">
+                                        <div class="price fl">
+                                            <i>￥<span>23</span></i>
+                                            <span>0.25kg</span>
+                                        </div>
+                                        <div class="inputbox fr">
+                                            <a class="pAd">-</a>
+                                            <input type="number" min="1" max="200" value="1">
+                                            <a class="pAp">+</a>
+                                            <div class="del"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item clearfix">
+                                <div class="left fl">
+                                    <span class="icon1 checked cbbox2"></span>
+                                </div>
+                                <div class="right clearfix">
+                                    <div class="listimg fl">
+                                        <img src="imgs/apple.jpg">
+                                    </div>
+                                    <div class="listname fl">
+                                        <div class="p-name">
+                                            <a href="###">誉福园 山东烟台栖霞红富士苹果5斤装 果径80以上 80一85mm</a>
+                                        </div>
+                                        <div class="p-message clearfix">
+                                            <div class="price fl">
+                                                <i>￥<span>11.02</span></i>
+                                                <span>0.25kg</span>
+                                            </div>
+                                            <div class="inputbox fr">
+                                                <a class="pAd">-</a>
+                                                <input type="number" min="1" max="200" value="1">
+                                                <a class="pAp">+</a>
+                                                <div class="del"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </li>
+                    
+               
+                        <li class="cart-list-item cart-newtotal">
+                                <a href="https://www.sfbest.com/html/zt/22/index.html" id="freighturl"><i class="icon1 icon"></i>运费规则</a>
+                        </li>
+                    </ul>
+                </div>    
+            </div>
+                
+            <!-- 商品总计 结算 -->
+            <div class="ui-foot">
+                <div class="leftcheck fl">
+                    <span class="icon1 checked cbbox1"></span>
+                </div>
+                <div class="totalPrice fl" >
+                    <div class="totalPrice1">
+                         <p>总计:<i>￥</i><span class="totalPrice2">0</span></p>
+                         <div>商品金额￥<span>0</span>(不含运费)</div>
+                    </div>
+                   
+                    <span class="allcheck" id="totalPrice">全选</span>
+                </div>
+                <div class="gopay fr">
+                    <a href="###">结算(<span>0</span>)</a>
+                    <span class="alldel">批量删除</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 当商品数量不规范时弹出的提示框 -->
+    <div class="tip">
+        最少购买一件商品
+    </div>
+
+
+
+
+
+
+
+
+    <!-- 底部导航 -->
+    <div class="menu-tab">
+        <span class="menu-item">
+            <i>
+                <img src="imgs/index.png" alt="">
+            </i>
+            首页
+        </span>
+        <span class="menu-item">
+            <i>
+                <img src="imgs/classfiy.png" alt="">
+            </i>
+            分类
+        </span>
+        <span class="menu-item">
+            <i>
+                <img src="imgs/find-2.png" alt="">
+            </i>
+            发现
+        </span>
+        <span class="menu-item">
+            <i>
+                <img src="imgs/shoppingcart.png" alt="">
+            </i>
+            购物车
+        </span>
+        <span class="menu-item">
+            <i>
+                <img src="imgs/myself.png" alt="">
+            </i>
+            我的优选
+        </span>
+
+
+    </div>
+    <script src="../sfbest/js/iscroll-probe.js"></script>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/touch.js"></script>
+    <script src="js/shoppingcart.js"></script>
+</body>
+
+</html>

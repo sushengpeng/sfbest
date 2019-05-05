@@ -1,0 +1,225 @@
+/* line */
+.borderLine2 {
+    border-bottom: 0.4694rem solid #f9f9f9;
+}
+/* 左浮动 */
+.fl{
+    float: left;
+}
+/* 右浮动 */
+.fr{
+    float:right;
+}
+a{
+    text-decoration: none;
+}
+/* 发现优选 */
+.content{
+    min-width: 320px;
+    max-width: 750px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    position: relative;
+}
+.content .toolbar{
+    position: relative;
+}
+.content .toolbar .borderLine {
+    border-bottom: none;
+}
+.content .toolbar .top-bar {
+    position: relative;
+    text-align: center;
+    font-size: 0.6827rem;
+    padding: 0.2987rem 0;
+    border-bottom: #dcdcdc 1px solid;
+    line-height: 1.28rem;
+}
+/* 栏目 */
+.menutab{
+    height: 1.9627rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+.menutab .menuSpan{
+    margin: 0 1.28rem;
+    height: 1.8347rem;
+    line-height: 1.8347rem;
+    text-align: center;
+    color: #333;
+    font-size: 0.5974rem;
+    border-bottom: 0.128rem solid white;
+}
+.menutab .find-active{
+    border-bottom: 0.128rem solid #6bab23;
+}
+/* 内容区----营养师专栏 */
+.menuList {
+    min-height: 6.784rem;
+    padding: 0.768rem 1.024rem;
+}
+.menu-face{
+    height: 0.9174rem;
+    padding-bottom: 0.9387rem;
+}
+.menuList .menu-face img{
+    width: 0.9174rem;
+    height: 0.9174rem;
+    border: none;
+    border-radius: 50%;
+    margin-right: 0.512rem;
+}
+.menuList .menu-face span {
+    display: inline-block;
+    height: 0.9174rem;
+    line-height: 0.9174rem;
+    color: #b7b7b7;
+    font-size: 0.5547rem;
+}
+.menuList .menu-con img {
+    width: 4.672rem;
+    height: 4.672rem;
+    border: none;
+    border-radius: 0.1707rem;
+}
+.menuList .menu-pros {
+    width: 8.1067rem;
+    min-height: 4.672rem;
+    position: relative;
+}
+.menuList .menu-pros .title {
+    font-size: 0.768rem;
+    color: #333;
+}
+.menuList .menu-pros .omit2{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.menuList .menu-pros .smtitle {
+    font-size: 0.5547rem;
+    color: #999;
+}
+.menuList .menu-pros .times {
+    font-size: 0.512rem;
+    color: #b7b7b7;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.jscroll .jscroll-inner{
+    display: none;
+}
+.jscroll .find-tive{
+    display: block;
+}
+/* 内容区----优选厨房 */
+.kitchen-con {
+    padding: 0 0.6827rem;
+    min-height: 4.5867rem;
+}
+.kitchen-con .smtitle{
+    padding-top: 0.5547rem;
+    font-size: 0.5547rem;
+    color: #999;
+}
+.kitchen-top img {
+    width: 100%;
+    height: 7.2107rem;
+}
+/* 优选厨房--- 商品列表  */
+.brand-product {
+    padding: 0 0.4694rem;
+}
+.brand-product .swiper-slide {
+    width: 4.4587rem;
+}
+.brand-product a:link{
+    text-decoration: none;
+}
+.brand-product .brandImg{
+    width: 4.4587rem;
+    height: 4.4587rem;
+}
+.brand-product .brandImg img {
+    width: 100%;
+}
+.brand-product .brand-info {
+    text-align: center;
+    padding-top: 0.4907rem;
+    padding-bottom: 0.6827rem;
+}
+.brand-product .brand-info .brand-describe {
+    margin-top: 0.1067rem;
+    font-size: 0.512rem;
+    color: #000;
+}
+.omit1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.brand-product .brand-info .brand-price {
+    font-size: 0.512rem;
+    color: #ff8200;
+    margin-top: 0.2134rem;
+}
+/* 美食文化 */
+.cate-top{
+    padding:0 0.6827rem 0 0.6827rem;
+}
+.cate-con{
+    padding: 0;
+    min-height:2.56rem;
+}
+.cate-title{
+    padding-top: 0.768rem;
+    font-size: 0.8534rem;
+    color: #333;
+}
+.cate-top img{
+    width: 100%;
+    height: 7.2107rem;
+}
+.cate-smtitle{
+    padding-top: 0.5547rem;
+    font-size: 0.5547rem;
+    color: #999;
+}
+/* 底部 */
+.borderLine3 {
+    border-bottom: 2.1547rem solid #f9f9f9;
+}
+.menu-tab{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    z-index: 999;
+    text-align: center;
+    background: #fff;
+    border-top: 1px solid #eaeaea;
+    white-space: nowrap;
+    display: flex;
+}
+.menu-tab .menu-item {
+    width: 20%;
+    padding: 0.2987rem 0;
+    text-align: center;
+    font-size: 0.4267rem;
+    color: #000;
+}
+.menu-tab .menu-item i {
+    height: 0.9814rem;
+    display: block;
+    margin-bottom: 0.1067rem;
+}
+.menu-tab .menu-item i img {
+    width: 0.9814rem;
+    height: 0.9814rem;
+    border: 0;
+    margin: 0 auto;
+}

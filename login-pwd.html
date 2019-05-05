@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的优选</title>
+    <link rel="shortcut icon" href="./imgs/favicon.ico">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/myself-login.css">
+    <script src="js/global.js"></script>
+    <style>
+        #content #login .input-box .delete {
+            /* display:none; */
+            position: absolute;
+            top: 1.0667rem;
+            right: 0;
+            width: 0.768rem;
+            height: 0.768rem;
+            background: url(imgs/login-pwd1.png) no-repeat center;
+            background-size: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sf-login">
+        <div id="content">
+            <!-- 顶部 登陆方式切换（手机短信/密码登陆） -->
+            <div id="header">
+                <!-- 顶部上 登陆方式切换 -->
+                <div class="header-top">
+                    <a href="###">
+                        <span class="title-back"></span>
+                    </a>
+                    <a href="login-note.html">
+                        <span class="fr">手机短信登陆<i class="icon-right"></i></span>
+                    </a>
+                </div>
+                <!-- 顶部下 登陆方式显示 -->
+                <div class="login-title">密码登录</div>
+            </div>
+            <!-- 下部 登陆注册模块 -->
+            <div id="login">
+                <!-- 请输入手机号 -->
+                <div class="input-box">
+                    <input type="text" class="pdr" id="username" placeholder="请输入手机号/邮箱/用户名">
+                </div>
+                <!-- 请输入密码 -->
+                <div class="input-box">
+                    <input type="password" class="pdr" id="password" placeholder="请输入密码">
+                    <span class="delete"></span>
+                </div>
+                <!-- 输入验证码 -->
+                <div class="input-box">
+                    <input type="text" class="pdr" id="verification" placeholder="输入图形验证码">
+                    <span class="delete-r"></span>
+                    <canvas id="canvas"></canvas>
+                    <span class=""></span>
+                </div>
+                <!-- 用户协议 -->
+                <div class="registr-box">
+                    <span class="checkbox"></span>同意
+                    <a href="https://m.sfbest.com/regist/agreement">顺丰优选用户协议</a>
+                </div>
+                <!-- 登录按钮 -->
+                <div class="login-btn">
+                    <a href="###">登录</a>
+                </div>
+                <!-- 其他方式登录 -->
+                <div class="login-other">
+                    <div>
+                        <div class="line"></div>
+                        <div class="login-other-text">其他方式登录</div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="login-other-sf">
+                        <a href=""><img src="imgs/login-sf.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/zepto.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+.content {
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 14px;
+    background-color: #ffffff;
+    width: 100%;
+    color: #333333;
+    min-height: 400px;
+}
+.special-banner {
+    width: 100%;
+    font-size: 0;
+    line-height: 0;
+}
+.special-banner img {
+    width: 100%;
+}
+.ui-list-grid {
+    background-color: #FFF;
+    padding: 0.714em 0 0 0.714em;
+    background: #f0f0f0;
+}
+.ui-list-grid-wrap {
+    width: 100%;
+}
+.ui-list-grid-item {
+    float: left;
+    width: 50%;
+}
+.ui-list-grid .ui-list-item {
+    margin: 0 0.714em 0.714em 0;
+    background: white;
+    position: relative;
+    border: 1px solid #e9e9e9;
+}
+.ui-list-grid .p-img {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.ui-list-item .p-img img{
+    width: 100%;
+    border: 0 none;
+}
+.ui-list-item .p-item {
+    overflow: hidden;
+    position: relative;
+    margin: 0.5357em;
+}
+.ui-list-grid .p-name {
+    height: 2.6em;
+    margin-top: 0;
+    margin-bottom: 0.1785em;
+    margin-right: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 0.857em;
+    margin: 0.357em 1.428em 0.714em 0;
+    line-height: 1.4em;
+}
+.ui-list-grid .p-describe {
+    font-size: 0.785em;
+    height: 1.3em;
+    line-height: 1.2em;
+    margin-bottom: 0.357em;
+    color: #646464;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.ui-list-grid .p-price {
+    color: #ff6600;
+    font-weight: bold;
+    margin-top: 0.5357em;
+    margin-bottom: 0.357em;
+    display: inline-block;
+    font-size: 0.8571em;
+}
+.ui-list-grid .p-price strong {
+    font-size: 1.1666em;
+}
+.ui-list-grid .p-promo2 {
+    display: inline-block;
+    overflow: hidden;
+    margin-bottom: -0.1em;
+}
+.ui-list-grid .p-vip {
+    font-size: 0.6428em;
+    height: 1.7em;
+    overflow: hidden;
+}
+.ui-list-grid .p-gobuy {
+    font-size: 0.6428em;
+    position: absolute;
+    height: 1.7em;
+    line-height: 1.6em;
+    background-color: #fc5000;
+    padding: 0 0.256em;
+    border-radius: 0.128em;
+    text-align: center;
+    right: 0;
+    bottom: 0;
+    color: white;
+}
+.ui-list-grid .p-gobuy a:link, .ui-list-grid .p-gobuy a:visited {
+    color: white;
+}
