@@ -21,7 +21,7 @@
 .title-a img{display: block;float: left;height: 100%;border: 0;}
 /* 广告 */
 .download {width: 100%;position: relative;}
-.download img{position: absolute;top: 0;left: 0;z-index: 10;    width: 16rem;
+.download img{top: 0;left: 0;z-index: 10;    width: 16rem;
     height: 2.1334rem;}
 .delete{width: 2.4507rem;height: 2.1334rem;position: absolute;left: 0;z-index: 20;}
 .download-btn {width: 7.3334rem;height: 2.1334rem;position: absolute;right: 0;z-index: 20;}
@@ -50,7 +50,7 @@
 .p-info-l{width: 80%;}
 .p-info-r{width: 20%;height: 5rem;text-align: center;position: relative;
     border-left: dotted 1px gray;}
-.sp1{font-size: 1.024rem;;margin-left: 0.4rem;color: red;}
+/* .sp1{font-size: 1.024rem;;margin-left: 0.4rem;color: red;} */
 .p-content{margin-left: 0.6rem;display: flex;justify-content: space-between;}
 .p-lable{width: 4.5rem;font-size: 0.4694rem;color: #975fcc;
     border: 0.0214rem solid #975fcc;height: 0.8rem;text-align: center;line-height: 0.8rem;}
@@ -324,7 +324,7 @@ position: absolute;bottom: 0;}
     margin-top: 0.1067rem;
 }
  .p-price .sp1 {
-    font-size: 0.512rem;
+    font-size: 1.024rem;
     color: #dd0000;
 }
 .p-price .sp2 {
