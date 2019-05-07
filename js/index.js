@@ -21,6 +21,13 @@ $(".total-tab-box").on("tap", "li", function () {
         $(".tab1").hide()
         $(".tab2").show()
         $(".copyright").show()
+        $.ajax({
+            url:'./php/class.php',
+            data:'class='+this.innerHTML,
+            success:function(data){
+                console.log(JSON.parse(data))
+            }
+        })
     } else {
         $(".tab1").show()
         $(".tab2").hide()
@@ -81,12 +88,4 @@ var mySwiper7 = new Swiper($("#10"), {
         clickable: true,
     },
 })
-$('button').click(function(){
-    $.ajax({
-        url:'./php/detail.php',
-        data:'itemid=11',
-        success:function(data){
-            console.log(JSON.parse(data))
-        }
-    })
-})
+
