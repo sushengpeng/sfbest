@@ -9,6 +9,12 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 }
+.ht-item .ht-item-name {
+    padding: 0.8534rem 0.6827rem 0;
+    font-size: 0.64rem;
+    font-weight: bold;
+    color: #000000;
+}
 .floor {
     margin-bottom: 0.5547rem;
     overflow: hidden;
@@ -105,6 +111,44 @@ img{
     height: 1.344rem;
     line-height: 1.344rem;
     overflow: hidden;
+    display: inline-block;
+}
+.search-box .address .triangle{
+    display: inline-block;
+    width: 0.192rem;
+    height: 0.1067rem;
+    margin: 0.6187rem 0.2134rem 0 0;
+    background: url(../imgs/triangle.png) no-repeat center;
+    background-size: 100%;
+    position: relative;
+    top: -0.2rem;
+    left: 0.3rem;
+}
+.search-box .search{
+    display: inline-block;
+    width: 10.0054rem;
+    height: 1.344rem;
+    line-height: 1.344rem;
+    background-color: #f7f7f7;
+    border-radius: 0.064rem;
+    text-align: center;
+    font-size: 0.512rem;
+    color: #7c7c7c;
+}
+.search-box .search .icon-search{
+    float:left;
+    width: 0.576rem;
+    height: 0.576rem;
+    margin-right: 0.3414rem;
+    background: url(../imgs/search.png) no-repeat center;
+    background-size: 100%;
+    vertical-align: middle;
+    margin-left:2rem;
+    margin-top:0.4rem;
+}
+.search-box .search span{
+    float:left;
+    text-align: center;
 }
 .total-tab-box{
     position: relative;
@@ -394,4 +438,18 @@ img{
 .brand-p-name{
     font-size: 0.4694rem;
     color: #000000;
+}
+.copyright{
+    font-size: 0.512rem;
+    text-align: center;
+    color: #979797;
+    padding-top: 0.512rem;
+    background-color: #F2F2F2;
+    line-height: 0.768rem;
+    display: none;
+    margin-top:3.5rem;
+    height: 7rem;
+}
+.copyright a{
+    color: #979797;
 }

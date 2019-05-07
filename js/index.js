@@ -3,7 +3,7 @@
 //     console.log($(window).scrollTop())
 // })
 // brand
-var mySwiper5 = new Swiper($(".swiper-container"), {
+var mySwiper = new Swiper($(".brand-wrapper"), {
     // autoplay: true, //可选选项，自动滑动
     slidesPerView: 3,
 })
@@ -16,11 +16,12 @@ var mySwiper0 = new Swiper($(".swiper-container")[0], {
     //     clickable: true,
     // },
 })
-$(".total-tab-box").on("tap","li",function () {
-    if($(this).index()!=0){
+$(".total-tab-box").on("tap", "li", function () {
+    if ($(this).index() != 0) {
         $(".tab1").hide()
         $(".tab2").show()
-    }else{
+        $(".copyright").show()
+    } else {
         $(".tab1").show()
         $(".tab2").hide()
     }
