@@ -81,3 +81,12 @@ var mySwiper7 = new Swiper($("#10"), {
         clickable: true,
     },
 })
+$('button').click(function(){
+    $.ajax({
+        url:'./php/detail.php',
+        data:'itemid=11',
+        success:function(data){
+            console.log(JSON.parse(data))
+        }
+    })
+})
