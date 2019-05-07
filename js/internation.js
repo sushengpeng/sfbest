@@ -98,23 +98,22 @@ $(document).scroll(function () {   //页面加载时，获取滚动条初始高�
 // $('.mtop-in1').tap(function(){
 // })
 
-$()
-$.ajax({
+$('.swiper-slide3').tap(function(){
+        // console.log($(this).text());
+        // var con = $(this).text();
+
+        $.ajax({
         type: 'POST',
-        url: '../internation.php',
-        data:'itemnane',
-        // post payload:
-        // data: JSON.stringify({ name: 'Zepto.js' }),
-        // contentType: 'application/json'
+        url: './php/internation.php',
+        data: 'class=' + $(this).text(),
+        
         success: function (data) {
-                // Supposing this JSON payload was received:
-                //   {"project": {"id": 42, "html": "<div>..." }}
-                // append the HTML to context object.
-                // this.append(data.project.html)
-                console.log(data);
-                
+                console.log(JSON.parse(data));  
         }
 })
+        
+})
+
 
 
 
