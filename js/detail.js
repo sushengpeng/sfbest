@@ -17,6 +17,10 @@ $('.title-table').tap(function () {
         $(this).siblings()[i].style = "border-bottom: 0.13rem solid white;"
     }   
 })
+// 商品渲染数据
+
+
+
 
 
 

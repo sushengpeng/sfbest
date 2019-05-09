@@ -1,5 +1,4 @@
 //规定网页的字体大小
-!(function () {
     function resize() {
         var html = document.documentElement;
         var w = html.getBoundingClientRect().width;
@@ -16,15 +15,44 @@
             resize();
         }, 300)
     };
-})();
-// ! function (a) {
-//     function b() {
-//         var b, c, e, i, f = a.document,
-//             g = f.documentElement,
-//             h = g.getBoundingClientRect().width;
-//         b || c || (i = !!a.navigator.appVersion.match(/AppleWebKit.*Mobile.*/), b = a.devicePixelRatio, e = a.devicePixelRatio, b = i ? b : 1, c = 1 / b), g.style.fontSize = h >= 960 ? "40px" : 320 >= h ? "20px" : 20 * (h / 320) + "px"
-//     }
-//     a.addEventListener("resize", function () {
-//         b()
-//     }), b()
-// }(window);
+    //获取url中的数据
+    function getRequest(str) {
+        if (str == undefined) {
+            var url = location.href; //获取url中"?"符后的字串
+        } else {
+            var url = str;
+        }
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.slice(url.indexOf("?") + 1);
+            strs = str.split("&");
+            for (var i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    }
+    //获取cookie
+    function getCookie(c_name) {
+        if (document.cookie.length > 0) {
+            c_start = document.cookie.indexOf(c_name + "=")
+            if (c_start != -1) {
+                c_start = c_start + c_name.length + 1
+                c_end = document.cookie.indexOf(";", c_start)
+                if (c_end == -1) c_end = document.cookie.length
+                return unescape(document.cookie.substring(c_start, c_end))
+            }
+        }
+        return ""
+    }
+    //设置cookie
+    function setCookie(c_name, value, expiredays) {
+        var exdate = new Date()
+        exdate.setDate(exdate.getDate() + expiredays)
+        document.cookie = c_name + "=" + escape(value) +
+            ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString())
+    }
+    //添加到购物车
+    $(".p-cart").click(function(){
+        console.log(1)  
+    })
