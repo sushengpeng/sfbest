@@ -104,7 +104,7 @@ $('.swiper-slide3').tap(function(){
 
         $.ajax({
         type: 'POST',
-        url: './php/internation.php',
+        url: './php/class.php',
         data: 'class=' + $(this).text(),
         
         success: function (data) {
