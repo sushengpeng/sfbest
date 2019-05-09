@@ -1,8 +1,14 @@
 <?php
 
     include "conn.php";
-    $username=$_REQUEST['username'];
+    $itemid=$_REQUEST['itemid'];
 
+    $sql="DELETE FROM t_shopping WHERE itemid='$itemid'";
 
-
+    if($conn->query($sql)===TRUE){
+        echo "true";
+    }else{
+        echo "false";
+    }
+    $conn->close();
 ?>    
