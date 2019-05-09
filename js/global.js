@@ -1,5 +1,4 @@
 //规定网页的字体大小
-!(function () {
     function resize() {
         var html = document.documentElement;
         var w = html.getBoundingClientRect().width;
@@ -53,15 +52,7 @@
         document.cookie = c_name + "=" + escape(value) +
             ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString())
     }
-})();
-// ! function (a) {
-//     function b() {
-//         var b, c, e, i, f = a.document,
-//             g = f.documentElement,
-//             h = g.getBoundingClientRect().width;
-//         b || c || (i = !!a.navigator.appVersion.match(/AppleWebKit.*Mobile.*/), b = a.devicePixelRatio, e = a.devicePixelRatio, b = i ? b : 1, c = 1 / b), g.style.fontSize = h >= 960 ? "40px" : 320 >= h ? "20px" : 20 * (h / 320) + "px"
-//     }
-//     a.addEventListener("resize", function () {
-//         b()
-//     }), b()
-// }(window);
+    //添加到购物车
+    $(".p-cart").click(function(){
+        console.log(1)  
+    })

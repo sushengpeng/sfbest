@@ -443,13 +443,74 @@ img{
     font-size: 0.512rem;
     text-align: center;
     color: #979797;
-    padding-top: 0.512rem;
+    padding-top: 1.612rem;
+    margin-bottom:2.4rem;
     background-color: #F2F2F2;
     line-height: 0.768rem;
     display: none;
-    margin-top:3.5rem;
     height: 7rem;
+    box-sizing: border-box;
 }
 .copyright a{
     color: #979797;
+}
+.tab2{
+    padding-top:4rem;
+}
+.tab2 li{
+    overflow: hidden;
+    padding: 0.5974rem 0;
+    margin: 0 0.6827rem;
+    border-bottom: 1px solid #eeeeee;
+}
+.tab2 .list .p-img{
+    float: left;
+    width: 4.608rem;
+    height: 4.608rem;
+}
+.tab2 .list .p-info{
+    float: left;
+    margin-left: 0.4694rem;
+    width: 9.5574rem;
+    position: relative;
+}
+.tab2 .list .p-name{
+    margin-top: 0.1067rem;
+    font-size: 0.5974rem;
+    color: #000000;
+}
+.tab2 .list .p-name .zy{
+    display: inline-block;
+    margin-top: 0.128rem;
+    margin-right: 0.2987rem;
+    padding: 0 0.128rem;
+    height: 0.5974rem;
+    line-height: 0.5974rem;
+    font-size: 0.384rem;
+    color: #000;
+    text-align: center;
+    border: 1px solid #000000;
+    border-radius: 0.0854rem;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+.tab2 .list .p-lable{
+    margin-top: 0.32rem;
+    height: 0.576rem;
+    font-size: 0.384rem;
+}
+.tab2 .list .p-price{
+    margin-top: 0.8534rem;
+    font-size: 0.768rem;
+    color: #ff8200;
+    overflow: hidden;
+}
+.tab2 .list .p-cart{
+    position: absolute;
+    right: 0;
+    bottom: -0.0853rem;
+    width: 1.152rem;
+    height: 1.152rem;
+    background: url(../imgs/icon-cart1.png) no-repeat center;
+    background-size: 100%;
 }
