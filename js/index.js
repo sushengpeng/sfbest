@@ -3,24 +3,58 @@
 //     console.log($(window).scrollTop())
 // })
 // brand
-var mySwiper5 = new Swiper($(".swiper-container"), {
+var mySwiper = new Swiper($(".brand-wrapper"), {
     // autoplay: true, //可选选项，自动滑动
     slidesPerView: 3,
 })
 //头部导航
 var mySwiper0 = new Swiper($(".swiper-container")[0], {
-    // loop: true,
-    // slidesPerView: 'auto',
-    // slideToClickedSlide: true,
-    // pagination: {
-    //     clickable: true,
-    // },
+    loop: true,
+    slidesPerView: 'auto',
+    slideToClickedSlide: true,
+    pagination: {
+        clickable: true,
+    },
 })
-$(".total-tab-box").on("tap","li",function () {
-    if($(this).index()!=0){
+$(".total-tab-box").on("tap", "li", function () {
+    if ($(this).index() != 0) {
         $(".tab1").hide()
         $(".tab2").show()
-    }else{
+        $(".copyright").show()
+        let str=''
+        $('.tab2').find('.list').html(str)
+        $.ajax({
+            url: './php/class.php',
+            data: 'class=' + this.innerHTML,
+            success: function (data) {
+                // console.log(data)
+                const itemdata = JSON.parse(data)
+                for (let key in itemdata) {
+                    str= 
+                    `
+                    <li>
+                    <a href="detail.html?itemid=${itemdata[key].id}">
+                        <div class="p-img"><img class="" src="${itemdata[key].img.split(',')[0]}"
+                                data-original="https://ps02.sfimg.cn/2015/1300058773/middle_1300058773_1_1.jpg"
+                                style="display: block;"></div>
+                        <div class="p-info">
+                            <div class="p-name omit2"><span class="zy">自营</span>${itemdata[key].itemname}</div>
+                            <div class="p-lable"><span class="sp1">满返</span></div>
+                    <div class="p-price">￥${itemdata[key].price}<span></span></div>
+                            <div class="p-cart" productid="${itemdata[key].id}" minnum="1" type="0" state="1" ispresale="0" businessmodel="1"
+                                addprice="${itemdata[key].price}"></div>
+                        </div>
+                    </a>
+                    </li>
+                    
+                    `
+                    // console.log($('.tab2').find('.list')[0])
+                    $('.tab2').find('.list')[0].innerHTML+=str
+                }
+                
+            }
+        })
+    } else {
         $(".tab1").show()
         $(".tab2").hide()
     }
@@ -79,4 +113,7 @@ var mySwiper7 = new Swiper($("#10"), {
         el: $('.swiper-pagination')[3],
         clickable: true,
     },
+})
+$(".p-cart").click(function(){
+    console.log(1)  
 })
