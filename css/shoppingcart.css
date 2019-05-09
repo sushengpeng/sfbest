@@ -320,18 +320,18 @@ a{
 }
 /* 运费规则 */
 
-.prolist .prolistCont .cart-newtotal {
+.prolist .cart-newtotal {
     background: #f0f2f6;
     padding: 0.256rem 0 1.8347rem 1.9627rem;
 }
-.prolist .prolistCont .cart-newtotal a{
+.prolist .cart-newtotal a{
     display: block;
     font-size: 0.5547rem;
     color: #999;
     padding-top: 0.256rem;
     position: relative;
 }
-.prolist .prolistCont .cart-newtotal a .icon {
+.prolist .cart-newtotal a .icon {
     float: left;
     width: 0.7254rem;
     height: 0.7254rem;

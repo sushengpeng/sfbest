@@ -5,8 +5,11 @@
     var myScroll = new IScroll('#wrapper');
 })();
 
+
+
 !(function(){
 
+ 
     function check(dom){
         if($(dom).hasClass("icon1")){
         
