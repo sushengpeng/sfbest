@@ -5,7 +5,6 @@
         pagination: {
             el: '.swiper-pagination1',
         },
-
         // autoplay:true,//等同于以下设置
         autoplay: {
             delay: 3000,
@@ -15,17 +14,127 @@
 
     });
 })()
-
 !(function () {
-   $("li").tap(function(){
-       $(this).addClass("active").siblings().removeClass("active");
-    // console.log(1)
-   })
+    $("li").tap(function () {
+        $(this).addClass("active").siblings().removeClass("active");
+        if( $(this).text()!='全部'){
+            $.ajax({
+                type: "POST",
+                url: "./php/gift_class.php",
+                data: "class=" + $(this).text(),
+                success: function (result) {
+                    // console.log(result);
+                    var data = JSON.parse(result);
+                    // console.log(data);
+                    var str="";
+                    for(var i=0;i<data.length;i++){
+                        str+=` <div class="gift_list">
+                        <div class="jscroll">
+                          <div class="jscroll-inner clearfix">
+                            <div class="gift_item clearfix">
+                              <div class="gift_img">
+                                <img src="${data[i].img}" alt="">
+                              </div>
+                  
+                              <div class="gift_info" productid="314643">
+                                <div class="gift_title omit1">${data[i].itemname}</div>
+                                <div class="gift_desc omit1">${data[i].des}</div>
+                                <div class="gift_bottom">
+                                  <div class="gift_price">￥${data[i].price} <span class="gray">${data[i].weight}</span></div>
+                                  <div class="gift_send" >送给Ta</div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                          </div>
+                        </div>
+                  
+                      </div>`
+                    }  
+                    $("#substance").html(str);    
+                }
+            })
+        }else{
+            $.ajax({
+                type: "POST",
+                url: "./php/gift.php",
+                data: "gift=" + 1,
+                success: function (result) {
+                    // console.log(result);
+                    var data = JSON.parse(result);
+                    console.log(data);
+                    var str="";
+                    for(var i=0;i<data.length;i++){
+                        str+=` <div class="gift_list">
+                        <div class="jscroll">
+                          <div class="jscroll-inner clearfix">
+                            <div class="gift_item clearfix">
+                              <div class="gift_img">
+                                <img src="${data[i].img}" alt="">
+                              </div>
+                  
+                              <div class="gift_info" productid="314643">
+                                <div class="gift_title omit1">${data[i].itemname}</div>
+                                <div class="gift_desc omit1">${data[i].des}</div>
+                                <div class="gift_bottom">
+                                  <div class="gift_price">￥${data[i].price} <span class="gray">${data[i].weight}</span></div>
+                                  <div class="gift_send" >送给Ta</div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                          </div>
+                        </div>
+                  
+                      </div>`
+                    }  
+                    $("#substance").html(str);    
+                }
+            })
+        }
+        // console.log($(this).text())
+
+    })
 })()
 
-
-
-
+!(function(){
+    $.ajax({
+        type: "POST",
+        url: "./php/gift.php",
+        data: "gift=" + 1,
+        success: function (result) {
+            // console.log(result);
+            var data = JSON.parse(result);
+            // console.log(data);
+            var str="";
+            for(var i=0;i<data.length;i++){
+                str+=` <div class="gift_list">
+                <div class="jscroll">
+                  <div class="jscroll-inner clearfix">
+                    <div class="gift_item clearfix">
+                      <div class="gift_img">
+                        <img src="${data[i].img}" alt="">
+                      </div>
+          
+                      <div class="gift_info" productid="314643">
+                        <div class="gift_title omit1">${data[i].itemname}</div>
+                        <div class="gift_desc omit1">${data[i].des}</div>
+                        <div class="gift_bottom">
+                          <div class="gift_price">￥${data[i].price} <span class="gray">${data[i].weight}</span></div>
+                          <div class="gift_send" >送给Ta</div>
+                        </div>
+                      </div>
+          
+                    </div>
+                  </div>
+                </div>
+          
+              </div>`
+            }  
+            $("#substance").html(str);    
+        }
+    })
+})()
 
 
 

@@ -1,9 +1,9 @@
 <?php
     include "conn.php";
     $class = $_REQUEST['class'];
-    $sql="SELECT * FROM t_itemlist where class=$class";
+    $sql="SELECT * FROM t_itemlist where class='$class' limit 6";
     $result=$conn->query($sql);
-    echo $sql;
+    // echo $sql;
     if($result->num_rows>0){
         while($row=mysqli_fetch_assoc($result)){
             $arr[] = $row;
