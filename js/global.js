@@ -5,7 +5,7 @@
         // 如果html宽度大于750，按照750的原稿尺寸显示
         w = w > 750 ? 750 : w;
         var fontSize = w / 16; //7.5指的是设计稿的尺寸为750，如果设计稿的尺寸为828，那么应该是w/8.28
-        console.log(fontSize)
+        // console.log(fontSize)
         html.style.fontSize = fontSize + "px";
     }
     resize();
@@ -53,6 +53,8 @@
             ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString())
     }
     //添加到购物车
-    $(".p-cart").click(function(){
-        console.log(1)  
+    // console.log($('.tab2').find(".p-cart"))
+    $(".p-cart").tap(function(e){
+        e.stopPropagation() 
+        return false;
     })

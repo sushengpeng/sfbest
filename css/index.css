@@ -149,6 +149,7 @@ img{
 .search-box .search span{
     float:left;
     text-align: center;
+    color: #7c7c7c;
 }
 .total-tab-box{
     position: relative;
@@ -182,7 +183,7 @@ img{
     text-align: center;
     box-sizing: border-box;
 }
-.total-tab li:first-child{
+.total-tab li:nth-child(10){
     margin-left:0.512rem;
     color: #0f9029;
     border-bottom: 0.128rem solid #0f9029;
@@ -457,7 +458,7 @@ img{
 .tab2{
     padding-top:4rem;
 }
-.tab2 li{
+.tab2 .list li{
     overflow: hidden;
     padding: 0.5974rem 0;
     margin: 0 0.6827rem;
