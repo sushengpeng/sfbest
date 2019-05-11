@@ -28,7 +28,7 @@ $(".tab2").hide()
 $(".total-tab-box").on("touchend", "li", function () {
     lastItemId = 0;
     itemclass = $(this).text()
-    console.log(itemclass)
+    // console.log(itemclass)
     $('.copyright').show()
     let copyright = `
     <div class="copyright">北京顺丰电子商务有限公司 | 客服电话：9533858<br>北京市公安局顺义分局备案11011302000890号<br>
@@ -41,7 +41,9 @@ $(".total-tab-box").on("touchend", "li", function () {
         $(".tab1").hide()
         $(".tab2").show()
         let _this = this
-        //    console.log(1) 
+        $('.mui-scroll').css({
+            "transform": "translate3d(0px, 0px, 0px)"
+        })
         let str = ''
         $('.mui-scroll').html(str)
         $(this).css({
@@ -166,9 +168,11 @@ var mySwiper7 = new Swiper($("#10"), {
 mui.init({
     pullRefresh: {
         container: "#refreshContainer",
-        //下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+        // 下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
         // down: {
         //     height: 50,//可选,默认50.触发下拉刷新拖动距离,
+        //     range : 10,//可选 默认100px,控件可下拉拖拽的范围
+        //     offset : 30, //可选 默认0px,下拉刷新控件的起始位置
         //     auto: false,//可选,默认false.首次加载自动下拉刷新一次
         //     contentdown: "下拉可以刷新",//可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
         //     contentover: "下拉释放立即刷新",//可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
@@ -188,13 +192,14 @@ mui.init({
 var count = 0;
 
 function pullfresh_function() {
-    mui('#refreshContainer').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+
     $.ajax({
         url: './php/lazy.php',
         data: 'class=' + itemclass + '&itemid=' + lastItemId,
         async: false,
         success: function (data) {           
-            if (data) {
+            if (data==0) {
+                mui('#pullrefresh').pullRefresh().endPullupToRefresh(true)//参数为true代表没有更多数据了。
                 console.log('没有数据了')
             } else {
                 var lazydata = JSON.parse(data)
@@ -203,20 +208,20 @@ function pullfresh_function() {
                     lastItemId = lazydata[key].id
                     str =
                         `
-                            <li>
-                                <a href="detail.html?itemid=${lazydata[key].id}">
-                                    <div class="p-img"><img class="" src="${lazydata[key].img.split(',')[0]}"
-                                            data-original="./imgs/lazy.png"
-                                            style="display: block;"></div>
-                                    <div class="p-info">
-                                        <div class="p-name omit2"><span class="zy">自营</span>${lazydata[key].itemname}</div>
-                                        <div class="p-lable"><span class="sp1">满返</span></div>
-                                <div class="p-price">￥${lazydata[key].price}<span></span></div>
-                                        <div class="p-cart" productid="${lazydata[key].id}" minnum="1" type="0" state="1" ispresale="0" businessmodel="1"
-                                            addprice="${lazydata[key].price}"></div>
-                                    </div>
-                                </a>
-                            </li>
+                        <li>
+                            <a href="detail.html?itemid=${lazydata[key].id}">
+                                <div class="p-img"><img class="" src="${lazydata[key].img.split(',')[0]}"
+                                        data-original="./imgs/lazy.png"
+                                        style="display: block;"></div>
+                                <div class="p-info">
+                                    <div class="p-name omit2"><span class="zy">自营</span>${lazydata[key].itemname}</div>
+                                    <div class="p-lable"><span class="sp1">满返</span></div>
+                            <div class="p-price">￥${lazydata[key].price}<span></span></div>
+                                    <div class="p-cart" productid="${lazydata[key].id}" minnum="1" type="0" state="1" ispresale="0" businessmodel="1"
+                                        addprice="${lazydata[key].price}"></div>
+                                </div>
+                            </a>
+                        </li>
                             `
                     // console.log($('.tab2').find('.list')[0])
                     $('.mui-scroll').find('.list')[0].innerHTML += str
@@ -225,36 +230,32 @@ function pullfresh_function() {
                     })
                 }
             }
-
+            mui('#refreshContainer').pullRefresh().endPulldownToRefresh(); //refresh completed
         }
     })
     // alert(1)
     // mui('#refreshContainer').pullRefresh().endPulldown();
-    try {
-        mui('#refreshContainer').pullRefresh().endPulldownToRefresh(); //refresh completed
-    } catch {
+    // try {
+    //     
+    // } catch {
 
-    }
+    // }
 
 }
-if (mui.os.plus) {
-    mui.plusReady(function () {
-        setTimeout(function () {
-            try {
-                mui('#refreshContainer').pullRefresh().pullupLoading();
-            } catch {
+// if (mui.os.plus) {
+//     mui.plusReady(function () {
+//         setTimeout(function () {
 
-            }
-        }, 1000);
+//                 mui('#refreshContainer').pullRefresh().pullupLoading();
 
-    });
-} else {
-    mui.ready(function () {
-        try {
-            mui('#refreshContainer').pullRefresh().pullupLoading();
-        } catch {
+//         }, 1000);
 
-        }
+//     });
+// } else {
+//     mui.ready(function () {
 
-    });
-}
+//             mui('#refreshContainer').pullRefresh().pullupLoading();
+    
+
+//     });
+// }

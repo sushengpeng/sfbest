@@ -54,7 +54,26 @@ function setCookie(c_name, value, expiredays) {
 }
 //添加到购物车
 // console.log($('.tab2').find(".p-cart"))
-// $(".p-cart").tap(function (e) {
-//     e.stopPropagation()
-//     return false;
-// })
+$(".p-cart").on("touchend",function () {
+    let itemid = $(this).attr('productid')
+    let username = 'zhangfeiyue'
+    let num = $('.num').text() || 1 //有num的时候传入num中的数据，没有默认为1
+    $.ajax({
+        url:'./php/movetocart.php',
+        data:'itemid='+itemid+'&username='+username+'&num='+num,
+        beforeSend:function(){
+            //添加前出现的效果
+        },
+        success:function(data){
+            let msg
+            console.log(data)
+            if(data){
+                msg='添加成功'
+            }else{
+                msg='添加失败'
+            }
+            console.log(msg)
+        }
+    })
+    return false;
+})
