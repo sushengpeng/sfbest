@@ -4,7 +4,7 @@
     var uname="zhangfeiyue"
 
     $.ajax({
-        url:"../php/shoppingcart.php",
+        url:"./php/shoppingcart.php",
         async: false,
         data:"username="+uname,
         success: function(data){
@@ -233,7 +233,7 @@ function sumprice(){
         // 删除数据函数
         function remove(itemid,username,dom){
             $.ajax({
-                url:'../php/del_cartinf.php',
+                url:'./php/del_cartinf.php',
                 data:'itemid='+itemid+'&username='+username,
                 success(data){
                     if(data){

@@ -14,7 +14,7 @@ $(window).scroll(function () {
             if($(this).scrollTop() > arr[i]/2 && !$(".spcil-banner").eq(i).hasClass("loaded")){
                 const kind = $('.spcil-banner').eq(i).attr('classify')
                     $.ajax({
-                    url: '../php/taste.php',
+                    url: './php/taste.php',
                     data: 'kind='+kind,
                     beforeSend:function(){
                         $(".spcil-banner").eq(i).addClass("loaded")
@@ -31,7 +31,7 @@ $(window).scroll(function () {
                                     <a>
                                         <img src="${img}" alt="">
                                         <p>${json[k].itemname}</p>
-                                        <p class="price"><span>${json[k].price}</span> <!-- <span>买赠</span> --></p>
+                                        <p class="price"><span>￥${json[k].price}</span> <!-- <span>买赠</span> --></p>
                                         <div>立即抢购</div>
                                     </a>
                             </li>
