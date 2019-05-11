@@ -1,11 +1,14 @@
+//优选厨房--商品列表
 !(function(){
-    var swiper = new Swiper('.swiper-container', {
+    var optimization = new Swiper('.brand-product', {
         slidesPerView: 3,
-        spaceBetween:10,
+        spaceBetween: 30,
+        width: window.innerWidth,
         pagination: {
-            clickable: true,
+          el: '.swiper-pagination',
+          clickable: true,
         },
-    });
+      });
 })()
 // 头部tab
 !(function () {
