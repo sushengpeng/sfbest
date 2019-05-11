@@ -1,18 +1,3 @@
-// function $(elementId) {
-//     return document.getElementById(elementId).nodeValue;
-// }
-// function divId(elementId) {
-//     return document.getElementById(elementId);
-// }
-// var reg_userName, reg_password;
-// // 用户名验证
-// function checkUser() {
-//     var user = $("username");
-//     var
-// };
-
-
-
 //---------------------验证码代码块
 $(function () {
     var show_num = [];
@@ -23,22 +8,95 @@ $(function () {
     })
     // 登陆按钮点击时的验证
     $(".login-btn").on('click', function () {
-        var val = $("#verification").val().toLowerCase();  //转换成小写
-
-        console.log(val);
-        var num = show_num.join("");
-        if (val == '') {
-            alert('请输入验证码！');
-        } else if (val == num) {
-            alert('提交成功！');
-            $("#verification").val('');
-            draw(show_num);
-
+        var user =$("#username").val();
+        var userId = $("#error_prompt");
+        // console.log(user);
+        var reg = /^[1][0-9]{10}|[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/;
+        if (user == "") {
+            // console.log('user' + "111");
+            userId.innerHTML = "用户名不能为空";
+            userId.style.display = "block";
+            setTimeout(() => {
+                userId.style.display = "none";
+            }, 1500)
+        } else if (reg.test(user) == false) {
+            // console.log('user' + "222");
+            userId.innerHTML = "用户名输入有误";
+            userId.style.display = "block";
+            setTimeout(() => {
+                userId.style.display = "none";
+            }, 1500)
+            return false;
         } else {
-            alert('验证码错误！请重新输入！');
-            $("#verification").val('');
-            draw(show_num);
+            var pwd = $("#password").val();
+            var pwdId = $("#error_prompt");
+            var reg = /^[a-zA-Z0-9]{6,16}$/;
+            if (pwd == "") {
+                pwdId.innerHTML = "密码不能为空";
+                pwdId.style.display = "block";
+                setTimeout(() => {
+                    pwdId.style.display = "none";
+                }, 1500)
+            } else if (reg.test(pwd) == false) {
+                pwdId.innerHTML = "密码输入有误";
+                pwdId.style.display = "block";
+                setTimeout(() => {
+                    pwdId.style.display = "none";
+                }, 1500)
+                return false;
+            } else {
+                var val = $("#verification").val().toLowerCase();  //转换成小写
+                // console.log(val);
+                var verify = $("#verification").val();
+                var verifyId =$("#error_prompt");
+                var num = show_num.join("");
+                if (val == '') {
+                    verifyId.innerHTML = '请输入验证码！';
+                    verifyId.style.display = "block";
+                    setTimeout(() => {
+                        userId.style.display = "none";
+                    }, 1500)
+                } else if (val == num) {
+                    $("#verification").val('');
+                    draw(show_num);
+                    return true;
+                } else {
+                    verifyId.innerHTML = '验证码错误！';
+                    verifyId.style.display = "block";
+                    setTimeout(() => {
+                        userId.style.display = "none";
+                    }, 1500)
+                    $("#verification").val('');
+                    draw(show_num);
+                    return false;
+                }
+                return true;
+            }
+            return true;
         }
+    })
+})
+$(function () {
+    $(".login-btn").click(function () {
+        var username = $("#username").val();
+        var password = $("#password").val();
+        console.log(username);
+        console.log(password);
+        $.ajax({
+            url: "../php/login.php",
+            // type: "GET",
+            data: "username=" + username + "&password=" + password,
+            success: function (data) {
+                if (data == "验证通过") {
+                    cookie.set("username", username, 1);
+                    cookie.set("password", password, 1);
+                    location.href = "../myself.html";
+                } else {
+                    alert("密码或用户名输入错误");
+                }
+            }
+        })
+        return false;
     })
 })
 // 验证码的显示方法

@@ -156,6 +156,18 @@ input::-webkit-input-placeholder{
     border-radius: 50%;
     box-sizing: border-box;
 }
+#content #login #error_prompt{
+    width: 5.67rem;
+    height:1.61rem;
+    line-height: 1.61rem;
+    text-align: center;
+    font-size: 0.6rem;
+    border-radius: 10px;
+    background-color: rgba(136, 127, 127, 0.5);
+    position: absolute;
+    left: 4.98rem;
+    display: none;
+}
 #content #login .login-btn a{
     display: inline-block;
     width: 13.6107rem;
