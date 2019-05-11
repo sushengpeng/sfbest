@@ -9,7 +9,7 @@
     gesture,
     down, up, move,
     eventMap,
-    initialized = false
+    initialized = false,
 
   function swipeDirection(x1, x2, y1, y2) {
     return Math.abs(x1 - x2) >=

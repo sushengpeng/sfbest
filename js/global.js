@@ -6,7 +6,7 @@
         // 如果html宽度大于750，按照750的原稿尺寸显示
         w = w > 750 ? 750 : w;
         var fontSize = w / 16; //7.5指的是设计稿的尺寸为750，如果设计稿的尺寸为828，那么应该是w/8.28
-        console.log(fontSize)
+        // console.log(fontSize)
         html.style.fontSize = fontSize + "px";
     }
     resize();
