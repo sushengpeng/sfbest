@@ -7,8 +7,7 @@
     if($conn->query($sql)===TRUE){
         echo true;
     }else{
-        echo 插入失败;
+        echo "插入失败";
     }
-
     $conn->close();
 ?>

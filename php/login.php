@@ -1,8 +1,8 @@
 <?php
     include "conn.php";
     $username=$_REQUEST["username"];
-    $pwd=$_REQUEST["pwd"];
-    $sql="select * from login where username='$username' and passeword='$pwd'";
+    $password=$_REQUEST["password"];
+    $sql="select * from t_userlist where username='$username' and password='$password'";
     $result=$conn->query($sql);
     if($result->num_rows==1){
         echo "验证通过";
