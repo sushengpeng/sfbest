@@ -26,10 +26,10 @@
             </div>
             <div class="shopping-btn clearfix">
                 <div class="nostore-btn fl">
-                    <a href="###">登录</a>
+                    <a href="login-note.html">登录</a>
                 </div>
                 <div class="nostore-btn click fr">
-                    <a href="###">去逛逛</a>
+                    <a href="index.html">去逛逛</a>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
             </div>
 
             <div class="cart-login clearfix">
-                <span>登录后您购物车中的商品将被永久保存<a href="###" class="login-btn fr">立即登录</a></span>
+                <span>登录后您购物车中的商品将被永久保存<a href="login-note.html" class="login-btn fr">立即登录</a></span>
             </div>
         </div>
         <!--cart-list-item-->
@@ -71,7 +71,7 @@
                         <span class="name">优选普通商品</span>
                     </div>
                     <ul class="prolistCont">
-                        <li class="item clearfix">
+                        <!-- <li class="item clearfix">
                             <div class="left fl">
                                 <span class="icon1 checked cbbox2"></span>
                             </div>
@@ -97,40 +97,15 @@
                                     </div>
                                 </div>
                             </div>
-                        </li>
-                        <li class="item clearfix">
-                                <div class="left fl">
-                                    <span class="icon1 checked cbbox2"></span>
-                                </div>
-                                <div class="right clearfix">
-                                    <div class="listimg fl">
-                                        <img src="imgs/apple.jpg">
-                                    </div>
-                                    <div class="listname fl">
-                                        <div class="p-name">
-                                            <a href="###">誉福园 山东烟台栖霞红富士苹果5斤装 果径80以上 80一85mm</a>
-                                        </div>
-                                        <div class="p-message clearfix">
-                                            <div class="price fl">
-                                                <i>￥<span>11.02</span></i>
-                                                <span>0.25kg</span>
-                                            </div>
-                                            <div class="inputbox fr">
-                                                <a class="pAd">-</a>
-                                                <input type="number" min="1" max="200" value="1">
-                                                <a class="pAp">+</a>
-                                                <div class="del"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                        </li>
-                    
+                        </li> -->
                
-                        <li class="cart-list-item cart-newtotal">
+                        <!-- <li class="cart-list-item cart-newtotal">
                                 <a href="https://www.sfbest.com/html/zt/22/index.html" id="freighturl"><i class="icon1 icon"></i>运费规则</a>
-                        </li>
+                        </li> -->
                     </ul>
+                    <div class="cart-list-item cart-newtotal">
+                        <a href="https://www.sfbest.com/html/zt/22/index.html" id="freighturl"><i class="icon1 icon"></i>运费规则</a>
+                    </div>
                 </div>    
             </div>
                 
@@ -168,43 +143,44 @@
 
     <!-- 底部导航 -->
     <div class="menu-tab">
-        <span class="menu-item">
+        <a class="menu-item" href="index.html">
             <i>
                 <img src="imgs/index.png" alt="">
             </i>
             首页
-        </span>
-        <span class="menu-item">
+        </a>
+        <a class="menu-item" href="classfiy.html">
             <i>
                 <img src="imgs/classfiy.png" alt="">
             </i>
             分类
-        </span>
-        <span class="menu-item">
+        </a>
+        <a class="menu-item" href="find.html">
             <i>
-                <img src="imgs/find-2.png" alt="">
+                <img src="imgs/find.png" alt="">
             </i>
             发现
-        </span>
-        <span class="menu-item">
+        </a>
+        <a class="menu-item" href="shoppingcart.html">
             <i>
-                <img src="imgs/shoppingcart.png" alt="">
+                <img src="imgs/shoppingcart-2.png" alt="">
             </i>
             购物车
-        </span>
-        <span class="menu-item">
+        </a>
+        <a class="menu-item" href="myself.html">
             <i>
                 <img src="imgs/myself.png" alt="">
             </i>
             我的优选
-        </span>
-
-
+        </a>
     </div>
-    <script src="../sfbest/js/iscroll-probe.js"></script>
+
+
+    <script src="js/iscroll-probe.js"></script>
     <script src="js/zepto.min.js"></script>
     <script src="js/touch.js"></script>
     <script src="js/shoppingcart.js"></script>
+    <script src="js/shoppingcartAjax.js"></script>
 </body>
 
 </html>
