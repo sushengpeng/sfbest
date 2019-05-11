@@ -87,7 +87,7 @@ img{
     width: 100%;
     margin: 0 auto;
     background-color: #fff;
-    position: relative;
+    /* position: relative; */
 }
 .top-box{
     position: fixed;
@@ -445,19 +445,31 @@ img{
     text-align: center;
     color: #979797;
     padding-top: 1.612rem;
-    margin-bottom:2.4rem;
+    padding-bottom:6.4rem;
     background-color: #F2F2F2;
     line-height: 0.768rem;
-    display: none;
+    /* display: none; */
     height: 7rem;
     box-sizing: border-box;
+    width: 100%;
 }
 .copyright a{
     color: #979797;
 }
 .tab2{
     padding-top:4rem;
+    /* position: relative; */
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
 }
+/* #refreshContainer{
+
+} */
 .tab2 .list li{
     overflow: hidden;
     padding: 0.5974rem 0;
