@@ -58,3 +58,50 @@
         e.stopPropagation() 
         return false;
     })
+    //上拉加载
+    mui.init({
+        pullRefresh: {
+            container: "#refreshContainer",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+            // down: {
+            //     height: 50,//可选,默认50.触发下拉刷新拖动距离,
+            //     auto: false,//可选,默认false.首次加载自动下拉刷新一次
+            //     contentdown: "下拉可以刷新",//可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+            //     contentover: "下拉释放立即刷新",//可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
+            //     contentrefresh: "下拉正在刷新...",//可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+            //     callback: pullfresh_function //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+            // },
+            up: {
+                height: 0,//可选.默认50.触发上拉加载拖动距离
+                auto: false,//可选,默认false.自动上拉加载一次
+                contentrefresh: "上拉正在加载...",//可选，正在加载状态时，上拉加载控件上显示的标题内容
+                contentnomore: '上拉没有更多数据了',//可选，请求完毕若没有更多数据时显示的提醒内容；
+                callback: pullfresh_function //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+            }
+        }
+    });
+    function pullfresh_function() {
+        //业务逻辑代码，比如通过ajax从服务器获取新数据；
+        //注意：
+        //1、加载完新数据后，必须执行如下代码，true表示没有更多数据了：
+        //2、若为ajax请求，则需将如下代码放置在处理完ajax响应数据之后
+        // axios.get('https://cnodejs.org/api/v1/topic/5433d5e4e737cbe96dcef312')
+        //     .then(res=> {
+        //         console.log(res);
+        //     })
+        alert(1)
+        // alert(1)
+        // mui('#refreshContainer').pullRefresh().endPulldown();
+        // this.endPullupToRefresh(true | false);
+    }
+    if (mui.os.plus) {
+        mui.plusReady(function() {
+            setTimeout(function() {
+                mui('#pullrefresh').pullRefresh().pullupLoading();
+            }, 1000);
+
+        });
+    } else {
+        mui.ready(function() {
+            mui('#pullrefresh').pullRefresh().pullupLoading();
+        });
+    }

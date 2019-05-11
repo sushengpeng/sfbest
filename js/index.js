@@ -22,13 +22,14 @@ var mySwiper0 = new Swiper($(".swiper-container")[0], {
         clickable: true,
     },
 })
+$(".tab2").hide()
 $(".total-tab-box").on("tap", "li", function () {
     if ($(this).text() != '为你优选') {
         $(".tab1").hide()
         $(".tab2").show()
         $(".copyright").show()
         let str=''
-        $('.tab2').html(str)
+        $('.mui-scroll').html(str)
         $.ajax({
             url: './php/class.php',
             data: 'class=' + this.innerHTML,
@@ -36,7 +37,7 @@ $(".total-tab-box").on("tap", "li", function () {
             success: function (data) {
                 // console.log(data)
                 const itemdata = JSON.parse(data)
-                $('.tab2').append('<ul class="list"></ul>')
+                $('.mui-scroll').append('<ul class="list "mui-table-view mui-table-view-chevron"></ul>')
                 for (let key in itemdata) {
                     str= 
                     `
@@ -57,7 +58,7 @@ $(".total-tab-box").on("tap", "li", function () {
                     
                     `
                     // console.log($('.tab2').find('.list')[0])
-                    $('.tab2').find('.list')[0].innerHTML+=str
+                    $('.mui-scroll').find('.list')[0].innerHTML+=str
                 }   
             }
         })        
@@ -77,16 +78,16 @@ $(".total-tab-box").on("tap", "li", function () {
                 <div class="swiper-pagination"></div>
             </div>
             `
-        $('.tab2').prepend(str)
-        let tabBanner = new Swiper($(".tab2 .swiper-container"), {
+        $('.mui-scroll').prepend(str)
+        let tabBanner = new Swiper($(".mui-scroll .swiper-container"), {
             autoplay: true, //可选选项，自动滑动
             pagination: {
-                el: $('.tab2 .swiper-pagination'),
+                el: $('.mui-scroll .swiper-pagination'),
                 clickable: true,
             },
         })
         if(bannerImg[$(this).data('id')].length==1){
-            $('.tab2 .swiper-pagination').hide()
+            $('.mui-scroll .swiper-pagination').hide()
         }
         // console.log(str)
     } else {
@@ -103,6 +104,7 @@ $(".total-tab-box").on("tap", "li", function () {
     $.ajax({
         url:'js/global.js?id='+Math.random()
     })
+    
 })
 //头部banner图部分
 var mySwiper1 = new Swiper($(".swiper-container")[1], {

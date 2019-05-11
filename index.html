@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>顺丰优选</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/swiper.css">
     <link rel="stylesheet" href="./css/animate.min.css">
-    <!-- <link rel="stylesheet" href="./css/mui.css"> -->
+    <link rel="stylesheet" href="./css/mui.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
@@ -763,15 +766,10 @@
                 <div class="ht-line1"></div>
             </div>
         </div>
-        <div class="tab2" id="#pullrefresh">
-            <!-- <div class="swiper-container">
-                <ul class="swiper-wrapper imglist">
-                    <li class="swiper-slide">
-                        <img src="" alt="">
-                    </li>
-                </ul>
-                <div class="swiper-pagination"></div>
-            </div> -->
+        <div class="tab2 mui-content mui-scroll-wrapper" id="refreshContainer">
+            <div class="mui-scroll">
+
+            </div>
         </div>
         <div class="copyright">北京顺丰电子商务有限公司 | 客服电话：9533858<br>北京市公安局顺义分局备案11011302000890号<br>
             <a href="http://www.miibeian.gov.cn" class="footer-link">京ICP备12011349号</a> |
@@ -814,43 +812,15 @@
     </div>
     <script src="./js/zepto.js"></script>
     <script src="./js/swiper.js"></script>
+    <script src="./js/mui.js"></script>
     <script src="./js/touch.js"></script>
     <script src="./js/fastclick.js"></script>
     <script src="./js/iscroll.js"></script>
-    <script src="./js/mui.js"></script>
+    
     <script src="./js/global.js"></script>
     <script src="./js/index.js"></script>
     <script>
-        mui.init({
-            pullRefresh: {
-                container: '#pullrefresh', //待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
-                up: {
-                    height: 50, //可选.默认50.触发上拉加载拖动距离
-                    auto: true, //可选,默认false.自动上拉加载一次
-                    contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
-                    contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
-                    callback: function () { //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
-                        console.log(1)
-                    }
-                }
-            }
-        })
-        // mui.init({
-        //     pullRefresh: {
-        //         container: "#pullrefresh", //下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
-        //         down: {
-        //             style: 'circle', //必选，下拉刷新样式，目前支持原生5+ ‘circle’ 样式
-        //             color: '#2BD009', //可选，默认“#2BD009” 下拉刷新控件颜色
-        //             height: '50px', //可选,默认50px.下拉刷新控件的高度,
-        //             range: '100px', //可选 默认100px,控件可下拉拖拽的范围
-        //             offset: '0px', //可选 默认0px,下拉刷新控件的起始位置
-        //             auto: true, //可选,默认false.首次加载自动上拉刷新一次
-        //             callback: () => {
-        //                 console.log(2)
-        //             } //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
-        //         }
-        //     }
-        // });
+
     </script>
 </body>
 
