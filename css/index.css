@@ -87,7 +87,7 @@ img{
     width: 100%;
     margin: 0 auto;
     background-color: #fff;
-    position: relative;
+    /* position: relative; */
 }
 .top-box{
     position: fixed;
@@ -149,6 +149,7 @@ img{
 .search-box .search span{
     float:left;
     text-align: center;
+    color: #7c7c7c;
 }
 .total-tab-box{
     position: relative;
@@ -182,7 +183,7 @@ img{
     text-align: center;
     box-sizing: border-box;
 }
-.total-tab li:first-child{
+.total-tab li:nth-child(10){
     margin-left:0.512rem;
     color: #0f9029;
     border-bottom: 0.128rem solid #0f9029;
@@ -444,20 +445,32 @@ img{
     text-align: center;
     color: #979797;
     padding-top: 1.612rem;
-    margin-bottom:2.4rem;
+    padding-bottom:6.4rem;
     background-color: #F2F2F2;
     line-height: 0.768rem;
-    display: none;
+    /* display: none; */
     height: 7rem;
     box-sizing: border-box;
+    width: 100%;
 }
 .copyright a{
     color: #979797;
 }
 .tab2{
     padding-top:4rem;
+    /* position: relative; */
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
 }
-.tab2 li{
+/* #refreshContainer{
+
+} */
+.tab2 .list li{
     overflow: hidden;
     padding: 0.5974rem 0;
     margin: 0 0.6827rem;
