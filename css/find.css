@@ -136,6 +136,7 @@ a{
 }
 .brand-product .swiper-slide {
     width: 4.4587rem;
+    margin: 0 0.2134rem;
 }
 .brand-product a:link{
     text-decoration: none;
