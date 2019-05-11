@@ -1,3 +1,74 @@
+// 购物车商品渲染数据
+
+!(function(){
+    var uname="zhangfeiyue"
+
+    $.ajax({
+        url:"../php/shoppingcart.php",
+        async: false,
+        data:"username="+uname,
+        success: function(data){
+            // console.log(data)
+        if(data=="false"){
+
+
+             $(".carFullPage").css("display","none")
+            $(".carEmptyPage").css("display","block")
+            // console.log('无数据')
+           } else{
+           
+            $(".carFullPage").css("display","block")
+            $(".carEmptyPage").css("display","none")
+
+            // console.log('有数据')
+            const json = JSON.parse(data) 
+            console.log(json)
+            
+            for(var i=0;i<json.length;i++){
+               console.log(json[i][1].num)
+            var str = " "
+                var img=(json[i][0].img).split(",")[0]
+                
+            str+= `
+            <li class="item clearfix">
+            <div class="left fl">
+                <span class="icon1 checked cbbox2"></span>
+            </div>
+            <div class="right clearfix">
+                <div class="listimg fl">
+                    <img src="${img}">
+                </div>
+                <div class="listname fl">
+                    <div class="p-name">
+                        <a href="###">${json[i][0].itemname}</a>
+                    </div>
+                    <div class="p-message clearfix">
+                        <div class="price fl">
+                            <i>￥<span>${json[i][0].price}</span></i>
+                            <span>${json[i][0].weight}</span>
+                        </div>
+                        <div class="inputbox fr">
+                            <a class="pAd">-</a>
+                            <input type="number" min="1" max="200" value="${json[i][1].num}">
+                            <a class="pAp">+</a>
+                            <div class="del" data-getid='${json[i][0].id}'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+            `
+    
+                $(".prolistCont").get(0).innerHTML+=str
+    
+            }
+           }
+       
+        
+        }
+    })
+})();
+
 // 购物车商品下拉功能
 
 
@@ -139,28 +210,69 @@ function sumprice(){
             $(".gopay a").css("display","block")
         }
     })
+    
+    // 当用户未登录时，提示用户登录!
 
-    // 删除商品
-
-        // 无商品是显示购物车为空
-
-        function showpage(){
-            if($(".item").length===0){
-                $(".carFullPage").css("display","none")
-                $(".carEmptyPage").css("display","block")
-            }
+!(function(){
+    const username='zhangfeiyue'
+        if(username){
+            $('.cart-login span').css('display','none')
+            $('#wrapper').css('margin-top','-1rem')
+        }else{
+            $('.cart-login span').css('display','blcok')
+            $('#wrapper').css('margin-top','0')
         }
+})();
 
-
-    $(".inputbox .del").tap(function(){
-        $(this).closest(".item").remove()
-        showpage()
-    })
-    $(".gopay").tap(function(){
-        if($("#goEdit").text()==="完成"){
-            $(".item").remove()
-        }
-        showpage()
-    })
+  
 })()
+!(function(){
+      // 删除商品
 
+      
+        // 删除数据函数
+        function remove(itemid,username,dom){
+            $.ajax({
+                url:'../php/del_cartinf.php',
+                data:'itemid='+itemid+'&username='+username,
+                success(data){
+                    if(data){
+                            dom.remove()
+                               $(".tip").css("display","block").text("删除成功")
+                            setTimeout(() =>{
+                            $(".tip").css("display","none")
+                            },500)
+                    }
+                }
+            })
+        }
+
+    // 逐个删除
+    $(".inputbox .del").tap(function(){
+        const itemid = $(this).data("getid")
+        const username = 'zhangfeiyue'
+       var  _this=$(this).closest(".item")
+      
+       remove(itemid,username,_this)
+    })
+    
+
+    // 批量删除
+        $(".gopay").tap(function(){
+             const username = 'zhangfeiyue'
+         if($("#goEdit").text()==="完成"){  
+            
+          const lis=  $(this).closest('.ui-foot').siblings("#wrapper").find(".item")
+                for(let i = 0 ; i<lis.length ; i++){
+                    const cbitemid = lis.eq(i).find('.cbbox2')
+                    const del = lis.eq(i).find('.del')
+
+                    if(cbitemid.hasClass('icon1')){
+                      const  itemid= del.data("getid") 
+
+                      remove(itemid,username,lis.eq(i))
+                    }
+                }
+            }
+        })
+})();

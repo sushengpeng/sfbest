@@ -275,11 +275,16 @@ a{
 }
 .prolist .right .listname .p-message .price i span{
     color: #fa6400;
+    
 }
-.prolist .right .listname .p-message .price span{
+.prolist .right .listname .p-message .price>span{
     font-size: 0.512rem;
     color: #969696;
     margin-top: 0.2134rem;
+    display: inline-block;
+    width: 4rem;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .prolist .right .listname .p-message .inputbox{
     font-size: 0;
