@@ -32,6 +32,7 @@
     left: 0;
     top: 0.256rem; 
     text-align: left; 
+    -webkit-tap-highlight-color:transparent
 }
 .content .toolbar .top-bar a img{
     display: block;
@@ -40,9 +41,7 @@
     height: 0.64rem;
     margin-top: 0.32rem;
     margin-left: 0.32rem
-    /* background: url(../../../images/webapp2.0/model/uc/address/back.png) no-repeat center; */
-    /* background-size: 100%; */
-    /* border: 0; */
+   
 }
 
 /************banner*/
@@ -98,6 +97,7 @@
  } */
 
  /*顶部tab栏 list*/
+ #substance{display: block}
  .gift_list{
      margin-top:0.2134rem;
      background: #fff;

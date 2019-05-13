@@ -1,3 +1,11 @@
+/*返回主页面*/ 
+!(function(){
+  $(".header-back").tap(function(){
+    // console.log(111)
+    // history.go(-1)
+  })
+})()
+
 /*banner*/
 !(function () {
     var swiper = new Swiper('.swiper-container1', {
