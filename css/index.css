@@ -234,8 +234,10 @@ img{
     padding: 0.576rem 0 1.2374rem;
     text-align: center;
 }
-.menu-box .swiper-slide {
-    width: 3.2rem;
+.menu-box .c-content{
+    display: flex;
+    justify-content: space-around;
+    flex-flow: nowrap;
 }
 .menu-box img {
     display: block;
@@ -475,6 +477,9 @@ img{
     padding: 0.5974rem 0;
     margin: 0 0.6827rem;
     border-bottom: 1px solid #eeeeee;
+}
+.tab2 li a{
+    display: block;
 }
 .tab2 .list .p-img{
     float: left;

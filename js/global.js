@@ -55,6 +55,7 @@ function setCookie(c_name, value, expiredays) {
 //添加到购物车
 // console.log($('.tab2').find(".p-cart"))
 $(".p-cart").on("touchend",function () {
+    console.log(1)
     let itemid = $(this).attr('productid')
     let username = 'zhangfeiyue'
     let num = $('.num').text() || 1 //有num的时候传入num中的数据，没有默认为1
@@ -77,3 +78,28 @@ $(".p-cart").on("touchend",function () {
     })
     return false;
 })
+const viewHeight = document.documentElement.clientHeight
+function lazyload() {
+    var eles = document.querySelectorAll(("img[data-lazy]"));
+    Array.prototype.forEach.call(eles, function(item, index) {
+        if (item.dataset.lazy == "")
+            return;
+        var rect = item.getBoundingClientRect(); //这个元素相对于左上角的位置  
+        // console.log(rect.bottom + ":" + rect.top);
+        if (rect.bottom >= 0 && rect.top < viewHeight) {
+            //当元素顶部小于可视高度时，请求图片资源
+            ! function() {
+                var img = new Image();
+                img.src = item.dataset.lazy;
+                img.onload = function() {
+                    item.src = img.src;
+                }
+                item.removeAttribute('data-lazy');
+                // item.removeAttribute('lazyload');
+            }()
+        }
+    })
+}
+
+lazyload(); //首屏
+document.addEventListener("scroll", lazyload);
