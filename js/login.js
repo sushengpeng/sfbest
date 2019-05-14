@@ -80,7 +80,7 @@ $(function () {
         // console.log(username);
         // console.log(password);
         $.ajax({
-            url: "../php/login.php",
+            url: "./php/login.php",
             type: "GET",
             data: "username=" + username + "&password=" + password,
             success: function (data) {
@@ -88,7 +88,7 @@ $(function () {
                     setCookie("username", username, 1);
                     setCookie("password", password, 1);
                     // if () {
-                    location.href = "../myself.html";
+                    location.href = "./myself.html";
                     // } else {
                     // location.href = "../shoppingcart.html";
                     // }

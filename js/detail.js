@@ -53,7 +53,7 @@ function getRequest(str) {
     let imgurl=''
     $.ajax({
         type: 'POST',
-        url: '../php/detail.php',
+        url: './php/detail.php',
         data: 'id=' + id,
         success: function (data) {
             const information = JSON.parse(data)

@@ -1,13 +1,26 @@
 //规定网页的字体大小
-!(function () {
-    function resize() {
-        var html = document.documentElement;
-        var w = html.getBoundingClientRect().width;
-        // 如果html宽度大于750，按照750的原稿尺寸显示
-        w = w > 750 ? 750 : w;
-        var fontSize = w / 16; //7.5指的是设计稿的尺寸为750，如果设计稿的尺寸为828，那么应该是w/8.28
-        // console.log(fontSize)
-        html.style.fontSize = fontSize + "px";
+function resize() {
+    var html = document.documentElement;
+    var w = html.getBoundingClientRect().width;
+    // 如果html宽度大于750，按照750的原稿尺寸显示
+    w = w > 750 ? 750 : w;
+    var fontSize = w / 16; //7.5指的是设计稿的尺寸为750，如果设计稿的尺寸为828，那么应该是w/8.28
+    // console.log(fontSize)
+    html.style.fontSize = fontSize + "px";
+}
+resize();
+window.onresize = function () {
+    //在苹果手机上会有闪屏效果
+    setTimeout(function () {
+        resize();
+    }, 300)
+};
+//获取url中的数据
+function getRequest(str) {
+    if (str == undefined) {
+        var url = location.href; //获取url中"?"符后的字串
+    } else {
+        var url = str;
     }
     var theRequest = new Object();
     if (url.indexOf("?") != -1) {
@@ -39,7 +52,8 @@ function setCookie(c_name, value, expiredays) {
     document.cookie = c_name + "=" + escape(value) +
         ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString())
 }
-
+//添加到购物车
+// console.log($('.tab2').find(".p-cart"))
 $(".p-cart").on("touchend",function () {
     console.log(1)
     let itemid = $(this).attr('productid')
