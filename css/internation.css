@@ -10,7 +10,7 @@
   background-size: 100%;}
 
 .mtop-in2{width: 75%;height: 1.85rem;}
-.mtop-in2 img{width: 100%;margin: 0 auto;width: 2.9654rem;height: 0.7467rem;margin-top: 0.5974rem;         margin-left: 4.2667rem;}
+.mtop-in2 img{width: 100%;margin: 0 auto;width: 2.9654rem;height: 0.7467rem;margin-top: 0.5974rem;display: block;}
 
 /* <!-- 优选国际header 结束-->  */
 .select-hd{background-color: red;}
