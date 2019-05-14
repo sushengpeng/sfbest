@@ -1,4 +1,5 @@
 //规定网页的字体大小
+<<<<<<< HEAD
 function resize() {
     var html = document.documentElement;
     var w = html.getBoundingClientRect().width;
@@ -21,6 +22,17 @@ function getRequest(str) {
         var url = location.href; //获取url中"?"符后的字串
     } else {
         var url = str;
+=======
+!(function () {
+    function resize() {
+        var html = document.documentElement;
+        var w = html.getBoundingClientRect().width;
+        // 如果html宽度大于750，按照750的原稿尺寸显示
+        w = w > 750 ? 750 : w;
+        var fontSize = w / 16; //7.5指的是设计稿的尺寸为750，如果设计稿的尺寸为828，那么应该是w/8.28
+        // console.log(fontSize)
+        html.style.fontSize = fontSize + "px";
+>>>>>>> 588bf4572287fce887d52411f7fefd764b62ea84
     }
     var theRequest = new Object();
     if (url.indexOf("?") != -1) {
