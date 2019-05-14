@@ -1,5 +1,5 @@
-﻿# Host: localhost  (Version: 5.5.45)
-# Date: 2019-05-05 19:11:45
+﻿# Host: localhost  (Version: 5.5.53)
+# Date: 2019-05-13 20:42:07
 # Generator: MySQL-Front 5.3  (Build 4.234)
 
 /*!40101 SET NAMES utf8 */;
@@ -100,9 +100,10 @@ CREATE TABLE `t_userlist` (
   `password` varchar(255) NOT NULL DEFAULT '' COMMENT '密码',
   `vip` int(1) DEFAULT '0' COMMENT '是否为vip',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 #
 # Data for table "t_userlist"
 #
 
+INSERT INTO `t_userlist` VALUES (1,'17839229677','17839229677',2),(2,'he1030878815@outlook.com','he1030878815',1),(3,'hzl','123456',0);

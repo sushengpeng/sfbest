@@ -41,7 +41,10 @@
     width: 100%;
 }
 .productList ul li p{
-    font-size: 0.6rem;
+    font-size: 0.5rem;
+    width: 7rem;
+    height: 1.5rem;
+    overflow: hidden;
 }
 .productList ul li p{
     margin-top: 10px
@@ -49,7 +52,7 @@
 .productList ul li .price{
     color: #fa6400;
     margin-top: 25px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     padding-bottom: 1.6em;
 }
 .productList ul li p span:nth-child(2){

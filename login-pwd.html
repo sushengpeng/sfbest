@@ -10,18 +10,6 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/myself-login.css">
     <script src="js/global.js"></script>
-    <style>
-        #content #login .input-box .delete {
-            /* display:none; */
-            position: absolute;
-            top: 1.0667rem;
-            right: 0;
-            width: 0.768rem;
-            height: 0.768rem;
-            background: url(imgs/login-pwd1.png) no-repeat center;
-            background-size: 100%;
-        }
-    </style>
 </head>
 
 <body>
@@ -45,19 +33,21 @@
             <div id="login">
                 <!-- 请输入手机号 -->
                 <div class="input-box">
-                    <input type="text" class="pdr" id="username" placeholder="请输入手机号/邮箱/用户名">
+                    <input type="text" class="pdr" id="username" placeholder="请输入手机号/邮箱/用户名"  onblur="checkName()">
+                    <span class="delete"></span>
                 </div>
                 <!-- 请输入密码 -->
                 <div class="input-box">
-                    <input type="password" class="pdr" id="password" placeholder="请输入密码">
-                    <span class="delete"></span>
+                    <input type="password" class="pdr" id="password" placeholder="请输入密码" onblur="checkPwd()">
+                    <span class="pwd-block"></span>
+                    <!-- <span class="pwd-hide"></span> -->
                 </div>
                 <!-- 输入验证码 -->
                 <div class="input-box">
-                    <input type="text" class="pdr" id="verification" placeholder="输入图形验证码">
+                    <input type="text" class="pdr" id="verification" placeholder="输入图形验证码" onblur="checkCanvas()">
                     <span class="delete-r"></span>
                     <canvas id="canvas"></canvas>
-                    <span class=""></span>
+                    <!-- <span class=""></span> -->
                 </div>
                 <!-- 用户协议 -->
                 <div class="registr-box">
@@ -83,7 +73,6 @@
             </div>
         </div>
     </div>
-    <script src="./js/cookie.js"></script>
     <script src="./js/zepto.js"></script>
     <script src="./js/login.js"></script>
 </body>
