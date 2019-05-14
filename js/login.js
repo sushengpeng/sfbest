@@ -1,98 +1,103 @@
-//---------------------验证码代码块
-$(function () {
-    var show_num = [];
+//errorId 是错误提示的消息框  在登录验证（用户名，密码，验证码）时都有用到
+errorId = document.getElementById("error_prompt");
+// 用户名验证
+function checkName() {
+    // console.log(errorId);
+    var user = $("#username").val();
+    var reg = /^[1][0-9]{10}|[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/;
+    if (user == "") {
+        errorId.innerHTML = "用户名不能为空";
+        errorId.style.display = "block";
+        setTimeout(() => {
+            errorId.style.display = "none";
+        }, 1500)
+    } else if (reg.test(user) == false) {
+        errorId.innerHTML = "用户名输入有误";
+        errorId.style.display = "block";
+        setTimeout(() => {
+            errorId.style.display = "none";
+        }, 1500)
+        return false;
+    } else { return true }
+}
+
+// 密码验证
+function checkPwd() {
+    var pwd = $("#password").val();
+    var reg = /^[a-zA-Z0-9]{6,16}$/;
+    if (pwd == "") {
+        errorId.innerHTML = "密码不能为空";
+        errorId.style.display = "block";
+        setTimeout(() => {
+            errorId.style.display = "none";
+        }, 1500)
+    } else if (reg.test(pwd) == false) {
+        errorId.innerHTML = "密码输入有误";
+        errorId.style.display = "block";
+        setTimeout(() => {
+            errorId.style.display = "none";
+        }, 2000)
+        return false;
+    } else { return true }
+}
+
+// 验证码绘制方法
+var show_num = [];
+draw(show_num);
+// 点击验证码的时候 随机生成新的验证码
+$("#canvas").on('click', function () {
     draw(show_num);
-    // 点击验证码的时候 随机生成新的验证码
-    $("#canvas").on('click', function () {
-        draw(show_num);
-    })
-    // 登陆按钮点击时的验证
-    $(".login-btn").on('click', function () {
-        var user =$("#username").val();
-        var userId = $("#error_prompt");
-        // console.log(user);
-        var reg = /^[1][0-9]{10}|[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/;
-        if (user == "") {
-            // console.log('user' + "111");
-            userId.innerHTML = "用户名不能为空";
-            userId.style.display = "block";
-            setTimeout(() => {
-                userId.style.display = "none";
-            }, 1500)
-        } else if (reg.test(user) == false) {
-            // console.log('user' + "222");
-            userId.innerHTML = "用户名输入有误";
-            userId.style.display = "block";
-            setTimeout(() => {
-                userId.style.display = "none";
-            }, 1500)
-            return false;
-        } else {
-            var pwd = $("#password").val();
-            var pwdId = $("#error_prompt");
-            var reg = /^[a-zA-Z0-9]{6,16}$/;
-            if (pwd == "") {
-                pwdId.innerHTML = "密码不能为空";
-                pwdId.style.display = "block";
-                setTimeout(() => {
-                    pwdId.style.display = "none";
-                }, 1500)
-            } else if (reg.test(pwd) == false) {
-                pwdId.innerHTML = "密码输入有误";
-                pwdId.style.display = "block";
-                setTimeout(() => {
-                    pwdId.style.display = "none";
-                }, 1500)
-                return false;
-            } else {
-                var val = $("#verification").val().toLowerCase();  //转换成小写
-                // console.log(val);
-                var verify = $("#verification").val();
-                var verifyId =$("#error_prompt");
-                var num = show_num.join("");
-                if (val == '') {
-                    verifyId.innerHTML = '请输入验证码！';
-                    verifyId.style.display = "block";
-                    setTimeout(() => {
-                        userId.style.display = "none";
-                    }, 1500)
-                } else if (val == num) {
-                    $("#verification").val('');
-                    draw(show_num);
-                    return true;
-                } else {
-                    verifyId.innerHTML = '验证码错误！';
-                    verifyId.style.display = "block";
-                    setTimeout(() => {
-                        userId.style.display = "none";
-                    }, 1500)
-                    $("#verification").val('');
-                    draw(show_num);
-                    return false;
-                }
-                return true;
-            }
-            return true;
-        }
-    })
 })
+// 验证验证码
+function checkCanvas() {
+    var val = $("#verification").val().toLowerCase();  //转换成小写
+    var verify = $("#verification").val();
+    var num = show_num.join("");
+    if (val == '') {
+        errorId.innerHTML = '请输入验证码！';
+        errorId.style.display = "block";
+        setTimeout(() => {
+            errorId.style.display = "none";
+        }, 2000)
+    } else if (val == num) {
+        return true;
+    } else {
+        errorId.innerHTML = '验证码错误！';
+        errorId.style.display = "block";
+        setTimeout(() => {
+            errorId.style.display = "none";
+        }, 2000)
+        $("#verification").val('');
+        draw(show_num);
+        return false;
+    }
+}
+// 登录验证  点击登录按钮时发起AJAX向后台访问数据并验证
 $(function () {
     $(".login-btn").click(function () {
         var username = $("#username").val();
         var password = $("#password").val();
-        console.log(username);
-        console.log(password);
+        // console.log(username);
+        // console.log(password);
         $.ajax({
-            url: "../php/login.php",
-            // type: "GET",
+            url: "./php/login.php",
+            type: "GET",
             data: "username=" + username + "&password=" + password,
             success: function (data) {
                 if (data == "验证通过") {
-                    cookie.set("username", username, 1);
-                    cookie.set("password", password, 1);
-                    location.href = "../myself.html";
+                    setCookie("username", username, 1);
+                    setCookie("password", password, 1);
+                    // if () {
+                    location.href = "./myself.html";
+                    // } else {
+                    // location.href = "../shoppingcart.html";
+                    // }
                 } else {
-                    alert("密码或用户名输入错误");
+                    errorId.innerHTML = '用户名或密码错误！';
+                    errorId.style.display = "block";
+                    setTimeout(() => {
+                        errorId.style.display = "none";
+                    }, 2000)
                 }
             }
         })
@@ -152,4 +157,25 @@ function randomColor() {//得到随机的颜色值
     var g = Math.floor(Math.random() * 256);
     var b = Math.floor(Math.random() * 256);
     return "rgb(" + r + "," + g + "," + b + ")";
+}
+
+
+// 手机短信验证登陆
+function checkPhone() {
+    var user = $("#phone").val();
+    var reg = /^[1][0-9]{10}$/;
+    if (user == "") {
+        errorId.innerHTML = "手机号不能为空";
+        errorId.style.display = "block";
+        setTimeout(() => {
+            errorId.style.display = "none";
+        }, 1500)
+    } else if (reg.test(user) == false) {
+        errorId.innerHTML = "手机号输入有误";
+        errorId.style.display = "block";
+        setTimeout(() => {
+            errorId.style.display = "none";
+        }, 1500)
+        return false;
+    } else { return true }
 }

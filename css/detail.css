@@ -193,6 +193,7 @@ position: absolute;bottom: 0;}
 .marb12 {
     margin-bottom: 0.256rem;
 }
+.marb12 .lable{margin-left: 0.7rem;}
 .user-evaluation .title {
     height: 2.0907rem;
     line-height: 2.0907rem;
@@ -212,6 +213,7 @@ position: absolute;bottom: 0;}
     font-size: 0.512rem;
     font-weight: normal;
 }
+.title .user{margin-left: 0.7rem;}
 .arrow-right {
     display: inline-block;
     width: 0.64rem;
@@ -231,6 +233,7 @@ position: absolute;bottom: 0;}
     height: 0.768rem;
     margin: 0.5334rem 0.256rem 0.5334rem 0;
     border-radius: 50%;
+    padding-left: 0.7rem;
 }
 .user-evaluation .evaluation-content .user-img img {
     display: block;
@@ -256,6 +259,7 @@ position: absolute;bottom: 0;}
     float: right;
     font-size: 0.512rem;
     color: #cccccc;
+    padding-right: 0.6rem;
 }
 /* <!--商家--> */
 .businessBox {
@@ -334,6 +338,10 @@ position: absolute;bottom: 0;}
  .p-price .sp1 {
     font-size: 1.024rem;
     color: #dd0000;
+}
+ .p-price .sp4 {
+    font-size: 1.024rem;
+    color: #848484;
 }
 .p-price .sp2 {
     font-size: 0.384rem;
@@ -481,6 +489,7 @@ position: absolute;bottom: 0;}
     background: url(https://m.sfbest.com/product/info/326421../../../../images/webapp2.0/model/product/evaluation-total-bg.png) no-repeat center;
     background-size: 100%;
 }
+
 .total-l{float: left;
     width: 50%;
     margin: 0 1.28rem 0 2.56rem;

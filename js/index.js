@@ -66,8 +66,8 @@ $(".total-tab-box").on("touchend", "li", function () {
                     lastItemId = itemdata[key].id
                     str =
                         `
-                    <li>
-                        <a href="detail.html?itemid=${itemdata[key].id}">
+                    <li >
+                        <a href="detail.html?itemid=${itemdata[key].id}" class='clearfix'>
                             <div class="p-img"><img class="" src="${itemdata[key].img.split(',')[0]}"
                                     data-original="./imgs/lazy.png"
                                     style="display: block;"></div>

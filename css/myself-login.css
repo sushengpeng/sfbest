@@ -100,13 +100,33 @@ input::-webkit-input-placeholder{
     padding-right: 5.3334rem;
 }
 #content #login .input-box .delete{
-    /* display:none; */
+    display:none;
     position: absolute;
     top:1.0667rem;
     right: 0;
     width: 0.768rem;
     height: 0.768rem;
     background: url(../imgs/login-delete.png) no-repeat center;
+    background-size: 100%;
+}
+#content #login .input-box .pwd-block{
+    display: block;
+    position: absolute;
+    top:1.0667rem;
+    right: 0;
+    width: 0.768rem;
+    height: 0.768rem;
+    background: url(../imgs/login-pwd1.png) no-repeat center;
+    background-size: 100%;
+}
+#content #login .input-box .pwd-hide{
+    display: none;
+    position: absolute;
+    top:1.0667rem;
+    right: 0;
+    width: 0.768rem;
+    height: 0.768rem;
+    background: url(../imgs/login-pwd2.png) no-repeat center;
     background-size: 100%;
 }
 .delete-r{
@@ -156,7 +176,7 @@ input::-webkit-input-placeholder{
     border-radius: 50%;
     box-sizing: border-box;
 }
-#content #login #error_prompt{
+#error_prompt{
     width: 5.67rem;
     height:1.61rem;
     line-height: 1.61rem;
@@ -169,6 +189,21 @@ input::-webkit-input-placeholder{
     display: none;
 }
 #content #login .login-btn a{
+    display: inline-block;
+    width: 13.6107rem;
+    height: 2.048rem;
+    line-height: 2.048rem;
+    font-size: 0.6827rem;
+    color: #FFF;
+    text-align: center;
+    border-radius: 0.1707rem;
+    background-color: #31c27c;
+    opacity: 0.3;
+    margin-top: 1.2rem;
+    min-height: 2.048rem;
+    text-decoration: none;
+}
+#content #login .login-note-btn a{
     display: inline-block;
     width: 13.6107rem;
     height: 2.048rem;

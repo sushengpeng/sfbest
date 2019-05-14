@@ -54,6 +54,7 @@ function setCookie(c_name, value, expiredays) {
 }
 //添加到购物车
 // console.log($('.tab2').find(".p-cart"))
+<<<<<<< HEAD
 // $(".p-cart").tap(function (e) {
 //     e.stopPropagation()
 //     return false;
@@ -75,3 +76,54 @@ function getRequest(str) {
     }
     return theRequest;
 }
+=======
+$(".p-cart").on("touchend",function () {
+    console.log(1)
+    let itemid = $(this).attr('productid')
+    let username = 'zhangfeiyue'
+    let num = $('.num').text() || 1 //有num的时候传入num中的数据，没有默认为1
+    $.ajax({
+        url:'./php/movetocart.php',
+        data:'itemid='+itemid+'&username='+username+'&num='+num,
+        beforeSend:function(){
+            //添加前出现的效果
+        },
+        success:function(data){
+            let msg
+            console.log(data)
+            if(data){
+                msg='添加成功'
+            }else{
+                msg='添加失败'
+            }
+            console.log(msg)
+        }
+    })
+    return false;
+})
+const viewHeight = document.documentElement.clientHeight
+function lazyload() {
+    var eles = document.querySelectorAll(("img[data-lazy]"));
+    Array.prototype.forEach.call(eles, function(item, index) {
+        if (item.dataset.lazy == "")
+            return;
+        var rect = item.getBoundingClientRect(); //这个元素相对于左上角的位置  
+        // console.log(rect.bottom + ":" + rect.top);
+        if (rect.bottom >= 0 && rect.top < viewHeight) {
+            //当元素顶部小于可视高度时，请求图片资源
+            ! function() {
+                var img = new Image();
+                img.src = item.dataset.lazy;
+                img.onload = function() {
+                    item.src = img.src;
+                }
+                item.removeAttribute('data-lazy');
+                // item.removeAttribute('lazyload');
+            }()
+        }
+    })
+}
+
+lazyload(); //首屏
+document.addEventListener("scroll", lazyload);
+>>>>>>> bd9a35f72f5e388deb1e8f3ca64b7ee9f9900f86

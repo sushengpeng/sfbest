@@ -31,13 +31,6 @@ $('.title-table').tap(function () {
         $('.tabs .object')[1].style.display = "none"
     }
 })
-
-
-
-
-
-
-
 // 商品渲染数据
 function getRequest(str) {
     if (str == undefined) {
@@ -55,38 +48,59 @@ function getRequest(str) {
     }
     return theRequest.itemid;
 }
-
-// console.log(getRequest(location.href));
-// console.log(theRequest);
-
-
-
 !function(){
-    // console.log(location.href)
-    // console.log(getRequest(location.href))
     var id = getRequest(location.href)
-    console.log(id);
+    let imgurl=''
     $.ajax({
         type: 'POST',
-        url: '../php/detail.php',
+        url: './php/detail.php',
         data: 'id=' + id,
         success: function (data) {
-            console.log(JSON.parse(data));
-            console.log($('.p-price .sp1')[0].innerText);    
-            console.log(JSON.parse(data)[0].price);
-            
-            $('.p-price .sp1')[0].innerText = '￥' + JSON.parse(data)[0].price
-            // $('.p-price .sp1')
-            console.log($('.swiper-slide1 img').attr('src'));
-            $('.swiper-slide1 img').each(function(){
-                $(this).attr('src',JSON.parse(data)[0].img)
+            const information = JSON.parse(data)
+            let box = information[0].img.split(',')
+            box.map(res=>{
+                imgurl += `
+                <div class="swiper-slide adver1 swiper-slide1 swiper-slide-active" style="width: 358px;">
+                <img src=${res}>
+                </div>
+                `
             })
+            $('.wrapper').html(imgurl)
+            $('.p-price .sp1')[0].innerText = '￥' +information[0].price
+            console.log(information);
+            
+            $('.p-place-country')[0].innerText = information[0].field
+            $('.p-name')[0].innerText = information[0].itemname
+            $('.p-info-price')[0].innerText = information[0].comnum
+            $('.spc')[0].innerText = information[0].weight
+            // $('.p-price .sp1')
+            // console.log($('.swiper-slide1 img').attr('src'));
+            // $('.swiper-slide1 img').each(function(){
+            //     $(this).attr('src',information[0].img)
+            // })
+            // console.log(information[0].img.split(','));
+            // if(box.length==1){
+            //     console.log(true);
+            // }
+            
+            
             
         }
     })
 }()
+!function(){
+    let conunt=0;
+    $('.addshoppingcart').tap(function(){
+        // conunt=conunt++;
+        console.log(111);   
+    })
+    $('.cart-bg span')[0].innerText = conunt
+    
+}()
 
-// 商品详情评价互相切换
+
+
+
 
 
 
