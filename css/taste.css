@@ -24,7 +24,7 @@
 }
 /* 酒水饮料 */
 .productList ul{
-   width: 100%;
+   margin-left: 0.9em
 }
 .productList ul li{
     display: inline-block;
@@ -35,16 +35,21 @@
     box-sizing: border-box;
     position: relative;
     margin-bottom: 0.5em;
-    margin-left: 0.5em
+    /* margin-left: 0.5em */
 }
+
 .productList ul li img{
     width: 100%;
 }
 .productList ul li p{
     font-size: 0.5rem;
-    width: 7rem;
-    height: 1.5rem;
+    /* width: 6rem; */
+    height: 1.44rem;
     overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 .productList ul li p{
     margin-top: 10px

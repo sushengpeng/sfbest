@@ -1,5 +1,4 @@
 //规定网页的字体大小
-<<<<<<< HEAD
 function resize() {
     var html = document.documentElement;
     var w = html.getBoundingClientRect().width;
@@ -22,17 +21,6 @@ function getRequest(str) {
         var url = location.href; //获取url中"?"符后的字串
     } else {
         var url = str;
-=======
-!(function () {
-    function resize() {
-        var html = document.documentElement;
-        var w = html.getBoundingClientRect().width;
-        // 如果html宽度大于750，按照750的原稿尺寸显示
-        w = w > 750 ? 750 : w;
-        var fontSize = w / 16; //7.5指的是设计稿的尺寸为750，如果设计稿的尺寸为828，那么应该是w/8.28
-        // console.log(fontSize)
-        html.style.fontSize = fontSize + "px";
->>>>>>> 588bf4572287fce887d52411f7fefd764b62ea84
     }
     var theRequest = new Object();
     if (url.indexOf("?") != -1) {
@@ -66,26 +54,24 @@ function setCookie(c_name, value, expiredays) {
 }
 //添加到购物车
 // console.log($('.tab2').find(".p-cart"))
-$(".p-cart").on("touchend",function () {
-    let itemid = $(this).attr('productid')
-    let username = 'zhangfeiyue'
-    let num = $('.num').text() || 1 //有num的时候传入num中的数据，没有默认为1
-    $.ajax({
-        url:'./php/movetocart.php',
-        data:'itemid='+itemid+'&username='+username+'&num='+num,
-        beforeSend:function(){
-            //添加前出现的效果
-        },
-        success:function(data){
-            let msg
-            console.log(data)
-            if(data){
-                msg='添加成功'
-            }else{
-                msg='添加失败'
-            }
-            console.log(msg)
+// $(".p-cart").tap(function (e) {
+//     e.stopPropagation()
+//     return false;
+// })
+//获取url中的数据
+function getRequest(str) {
+    if (str == undefined) {
+        var url = location.href; //获取url中"?"符后的字串
+    } else {
+        var url = str;
+    }
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+        var str = url.slice(url.indexOf("?") + 1);
+        strs = str.split("&");
+        for (var i = 0; i < strs.length; i++) {
+            theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
         }
-    })
-    return false;
-})
+    }
+    return theRequest;
+}

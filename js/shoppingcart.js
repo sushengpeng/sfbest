@@ -249,7 +249,10 @@ function sumprice(){
                             setTimeout(() =>{
                             $(".tip").css("display","none")
                             },500)
-                            showpage()
+                            setTimeout(() => {
+                                showpage()
+                            }, 1000);
+                            
                     }
                 }
             })
