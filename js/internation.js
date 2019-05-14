@@ -24,8 +24,6 @@ $('.swiper-slide3').tap(function () {
         $(this).siblings().removeClass('active')
         $('.keyword').show()
 })
-
-console.log($('.swiper-slide3'))
 $('.swiper-slide3').eq(0).tap(function(){
         $(this).addClass('active')
         $(this).siblings().removeClass('active')

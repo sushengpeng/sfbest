@@ -75,15 +75,9 @@ function getRequest(str) {
         }
     })
 }()
-// !function(){
-//     let conunt=0;
-//     $('.addshoppingcart').tap(function(){
-//         // conunt=conunt++;
-//         console.log(111);   
-//     })
-//     $('.cart-bg span')[0].innerText = conunt
-    
-// }()
+$('.title-a').tap(function(){
+    window.history.go(-1)
+})
 
 
 
