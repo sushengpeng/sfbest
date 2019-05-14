@@ -11,6 +11,7 @@
 			</arguments>
 		</buildCommand>
 	</buildSpec>
+	
 	<natures>
 		<nature>com.aptana.projects.webnature</nature>
 	</natures>
