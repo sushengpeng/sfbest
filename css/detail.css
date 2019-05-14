@@ -34,10 +34,10 @@
     width: 5.3334rem;
     height: 2.1334rem;}
 /* <!-- 商品轮播图 --> */
-.swiper-container1 {width: 100%;}
-.swiper-slide1 {background-position: center;background-size: cover;}
-.adver1 img{width: 100%;}
-/* .swiper-wrapper .adver1 {height: 14rem; } */
+.swiper-container1 {width: 100%;height: 100%;}
+.swiper-slide1 {background-position: center;background-size: cover;width: 100% !important}
+.swiper-slide1 img{width: 100%;}
+
 
 .swiper-container1 .swiper-pagination {
     position: absolute;
@@ -59,8 +59,8 @@
 .p-info-r{width: 20%;height: 5rem;text-align: center;position: relative;
     border-left: dotted 1px gray;}
 /* .sp1{font-size: 1.024rem;;margin-left: 0.4rem;color: red;} */
-.p-content{margin-left: 0.6rem;display: flex;justify-content: space-between;}
-.p-lable{width: 4.5rem;font-size: 0.4694rem;color: #975fcc;
+.p-content{margin-left: 0.6rem;display: flex;justify-content: left;height: 3rem}
+.p-lable{width: 2.5rem;font-size: 0.4694rem;color: #975fcc;
     border: 0.0214rem solid #975fcc;height: 0.8rem;text-align: center;line-height: 0.8rem;}
 .p-info-price{    font-size: 0.64rem;
     color: #76ac01;
@@ -84,6 +84,11 @@
 position: absolute;bottom: 0;}
 .p-name{font-size: 0.6827rem;margin-left: 0.2rem;}
 .p-price{margin-bottom: 0.58rem;  }
+.p-detail{
+    padding: 0 0.2rem;
+    /* text-align: left; */
+    float: left;
+}
 /* <!-- 产地、品牌、商家牌照 --> */
 .p-place {
     padding: 0 0.6827rem;
