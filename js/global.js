@@ -54,29 +54,36 @@ function setCookie(c_name, value, expiredays) {
 }
 //添加到购物车
 // console.log($('.tab2').find(".p-cart"))
+let loginstatus = getCookie('username')?true:false
+window.localStorage.shopping = ''
+let shoppingcart = window.localStorage.shopping
+// console.log(loginstatus)
 $(".p-cart").on("touchend",function () {
-    console.log(1)
     let itemid = $(this).attr('productid')
     let username = 'zhangfeiyue'
     let num = $('.num').text() || 1 //有num的时候传入num中的数据，没有默认为1
-    $.ajax({
-        url:'./php/movetocart.php',
-        data:'itemid='+itemid+'&username='+username+'&num='+num,
-        beforeSend:function(){
-            //添加前出现的效果
-        },
-        success:function(data){
-            let msg
-            console.log(data)
-            if(data){
-                msg='添加成功'
-            }else{
-                msg='添加失败'
+    if(loginstatus){
+        $.ajax({
+            url:'./php/movetocart.php',
+            data:'itemid='+itemid+'&username='+username+'&num='+num,
+            beforeSend:function(){
+                //添加前出现的效果
+            },
+            success:function(data){
+                let msg
+                console.log(data)
+                if(data){
+                    msg='添加成功'
+                }else{
+                    msg='添加失败'
+                }
+                console.log(msg)
             }
-            console.log(msg)
-        }
-    })
-    return false;
+        })
+        return false;
+    }else{
+        window.localStorage.shopping +=itemid+','
+    }
 })
 const viewHeight = document.documentElement.clientHeight
 function lazyload() {
@@ -100,6 +107,5 @@ function lazyload() {
         }
     })
 }
-
 lazyload(); //首屏
 document.addEventListener("scroll", lazyload);
