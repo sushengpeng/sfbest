@@ -1,8 +1,8 @@
 // 购物车商品渲染数据
 
 !(function(){
-    var uname="zhangfeiyue"
-
+    const uname = getCookie('username')  
+    // console.log(uname)
     $.ajax({
         url:"./php/shoppingcart.php",
         async: false,
@@ -14,13 +14,16 @@
 
              $(".carFullPage").css("display","none")
             $(".carEmptyPage").css("display","block")
-            // console.log('无数据')
+            $('body').css('background','#efefef')
+            $('.nostore-con p').text('购物车暂无商品')
+            $('.nostore-btn .login').text('我的收藏')
+            console.log('无数据')
            } else{
            
             $(".carFullPage").css("display","block")
             $(".carEmptyPage").css("display","none")
 
-            // console.log('有数据')
+            console.log('有数据')
             const json = JSON.parse(data) 
             console.log(json)
             
@@ -31,32 +34,34 @@
                 
             str+= `
             <li class="item clearfix">
-            <div class="left fl">
-                <span class="icon1 checked cbbox2"></span>
-            </div>
-            <div class="right clearfix">
-                <div class="listimg fl">
-                    <img src="${img}">
+                <div class="left fl">
+                    <span class="icon1 checked cbbox2"></span>
                 </div>
-                <div class="listname fl">
-                    <div class="p-name">
-                        <a href="###">${json[i][0].itemname}</a>
+                <div class="right clearfix">
+                    <div class="listimg fl">
+                        <a href="detail.html?itemid=${json[i][0].id}">
+                            <img src="${img}">
+                        </a>
                     </div>
-                    <div class="p-message clearfix">
-                        <div class="price fl">
-                            <i>￥<span>${json[i][0].price}</span></i>
-                            <span>${json[i][0].weight}</span>
+                    <div class="listname fl">
+                        <div class="p-name">
+                            <a href="detail.html?itemid=${json[i][0].id}">${json[i][0].itemname}</a>
                         </div>
-                        <div class="inputbox fr">
-                            <a class="pAd">-</a>
-                            <input type="number" min="1" max="200" value="${json[i][1].num}">
-                            <a class="pAp">+</a>
-                            <div class="del" data-getid='${json[i][0].id}'></div>
+                        <div class="p-message clearfix">
+                            <div class="price fl">
+                                <i>￥<span>${json[i][0].price}</span></i>
+                                <span>${json[i][0].weight}</span>
+                            </div>
+                            <div class="inputbox fr">
+                                <a class="pAd">-</a>
+                                <input type="number" min="1" max="200" value="${json[i][1].num}">
+                                <a class="pAp">+</a>
+                                <div class="del" data-getid='${json[i][0].id}'></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </li>
+             </li>
             `
     
                 $(".prolistCont").get(0).innerHTML+=str
@@ -214,13 +219,15 @@ function sumprice(){
     // 当用户未登录时，提示用户登录!
 
 !(function(){
-    const username='zhangfeiyue'
+    const username = getCookie('username') 
         if(username){
             $('.cart-login span').css('display','none')
             $('#wrapper').css('margin-top','-1rem')
         }else{
             $('.cart-login span').css('display','blcok')
             $('#wrapper').css('margin-top','0')
+            $('.nostore-con p').text('购物车无商品，可能是您尚未登录')
+            $('.nostore-btn .login').text('登录')
         }
 })();
 
@@ -242,9 +249,21 @@ function sumprice(){
                             setTimeout(() =>{
                             $(".tip").css("display","none")
                             },500)
+                            showpage()
                     }
                 }
             })
+        }
+
+        function showpage(){
+            if($(".item").length===0){
+                $(".carFullPage").css("display","none")
+                $(".carEmptyPage").css("display","block")
+                $('body').css('background','#efefef')
+                $('.nostore-con p').text('购物车暂无商品')
+                $('.nostore-btn .login').text('我的收藏')
+
+            }
         }
 
     // 逐个删除
@@ -254,6 +273,8 @@ function sumprice(){
        var  _this=$(this).closest(".item")
       
        remove(itemid,username,_this)
+
+       
     })
     
 
@@ -275,4 +296,16 @@ function sumprice(){
                 }
             }
         })
+})();
+
+
+!(function(){
+
+    // 点击登录按钮进入登录界面
+    $('.nostore-btn .login').tap(function(){
+        if($(this).text()=='登录'){
+            location.href='login-note.html?type=shoppingcart'
+        }
+    })
+
 })();
