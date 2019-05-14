@@ -20,11 +20,19 @@
     height: 1rem;                }
 .title-a img{display: block;float: left;height: 100%;border: 0;}
 /* 广告 */
-.download {width: 100%;position: relative;}
-.download img{top: 0;left: 0;z-index: 10;    width: 16rem;
+.download {
+    /* width: 16rem; */
+    width: 100%;
+    height: 2.1334rem;
+    background: url(../imgs/inter-advert.png) no-repeat center;
+    background-size: 100%;}
+/* .download img{top: 0;left: 0;z-index: 10;width: 100%;} */
+.delete{float: left;
+    width: 1.4507rem;
     height: 2.1334rem;}
-.delete{width: 2.4507rem;height: 2.1334rem;position: absolute;left: 0;z-index: 20;}
-.download-btn {width: 7.3334rem;height: 2.1334rem;position: absolute;right: 0;z-index: 20;}
+.download-btn {float: right;
+    width: 5.3334rem;
+    height: 2.1334rem;}
 /* <!-- 商品轮播图 --> */
 .swiper-container1 {width: 100%;}
 .swiper-slide1 {background-position: center;background-size: cover;}
@@ -185,6 +193,7 @@ position: absolute;bottom: 0;}
 .marb12 {
     margin-bottom: 0.256rem;
 }
+.marb12 .lable{margin-left: 0.7rem;}
 .user-evaluation .title {
     height: 2.0907rem;
     line-height: 2.0907rem;
@@ -204,6 +213,7 @@ position: absolute;bottom: 0;}
     font-size: 0.512rem;
     font-weight: normal;
 }
+.title .user{margin-left: 0.7rem;}
 .arrow-right {
     display: inline-block;
     width: 0.64rem;
@@ -223,6 +233,7 @@ position: absolute;bottom: 0;}
     height: 0.768rem;
     margin: 0.5334rem 0.256rem 0.5334rem 0;
     border-radius: 50%;
+    padding-left: 0.7rem;
 }
 .user-evaluation .evaluation-content .user-img img {
     display: block;
@@ -248,6 +259,7 @@ position: absolute;bottom: 0;}
     float: right;
     font-size: 0.512rem;
     color: #cccccc;
+    padding-right: 0.6rem;
 }
 /* <!--商家--> */
 .businessBox {
@@ -326,6 +338,10 @@ position: absolute;bottom: 0;}
  .p-price .sp1 {
     font-size: 1.024rem;
     color: #dd0000;
+}
+ .p-price .sp4 {
+    font-size: 1.024rem;
+    color: #848484;
 }
 .p-price .sp2 {
     font-size: 0.384rem;
@@ -466,7 +482,54 @@ position: absolute;bottom: 0;}
     box-sizing: border-box;
 }
 /* <!-- 评价 --> */
+.marb12{width: 100%;height: 4.0534rem;
+    padding: 0.6rem 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: url(https://m.sfbest.com/product/info/326421../../../../images/webapp2.0/model/product/evaluation-total-bg.png) no-repeat center;
+    background-size: 100%;
+}
 
+.total-l{float: left;
+    width: 50%;
+    margin: 0 1.28rem 0 2.56rem;
+    padding-top: 0.512rem;
+    width: 2.7734rem;
+    height: 2.7734rem;
+    border-radius: 50%;
+    background-color: #eef9d5;
+    color: #76ac01;
+    text-align: center;
+    box-sizing: border-box;}
+.pl1{font-size: 0.6827rem;display: block}
+.pl2{font-size: 0.5974rem;display: block}
+.total-r{float: left;width: 50%;}
+.total-r-text{float: left;margin-top: 1rem;font-size: 0.64rem;color: #000000;margin-right: 0.3414rem;display: block;}
+/* 评论部分 */
+.value-select1{display: flex;justify-content: space-around;}
+.value-select1 li{width: 4.6507rem;height: 1.28rem;line-height: 1.28rem;box-sizing: border-box;font-size: 0.521rem;text-align: center;margin: 0.1707rem;background-color: #f8f8f8;border-radius: 0.128rem;}
+.value-select2{display: flex;justify-content: left}
+.value-select2 li{width: 4.6507rem;height: 1.28rem;line-height: 1.28rem;box-sizing: border-box;font-size: 0.521rem;text-align: center;margin: 0.35rem;background-color: #f8f8f8;border-radius: 0.128rem;}
+.user-t{    overflow: hidden;
+    height: 1.8347rem;
+    line-height: 1.8347rem;}
+.user-img{
+    float: left;
+    width: 0.768rem;
+    height: 0.768rem;
+    margin: 0.5334rem 0.256rem 0.5334rem 1rem;
+    border-radius: 50%;
+line-height: 0.768rem;}
+.user-img img{width: 100%}
+.user-name{    float: left;
+    font-size: 0.512rem;
+    color: #333333}
+.value-time{float: right;font-size: 0.512rem;margin-right: 1rem}    
+.value-text{        font-size: 0.512rem;
+    color: #333333;
+    padding-bottom: 0.4267rem;
+margin-left: 1rem;}
+.placeholder{width: 100%;height: 2rem}
 
 
 
