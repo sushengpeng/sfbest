@@ -97,11 +97,12 @@
  } */
 
  /*顶部tab栏 list*/
- #substance{display: block}
+ .substance{display: block}
  .gift_list{
      margin-top:0.2134rem;
      background: #fff;
      margin-bottom: 0.896rem;
+     display: block
  }
  .gift_item{
     height: 5.76rem;

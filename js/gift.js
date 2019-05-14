@@ -36,7 +36,7 @@
                     // console.log(data);
                     var str="";
                     for(var i=0;i<data.length;i++){
-                        str+=` <div class="gift_list">
+                        str+=`<a href="detail.html?item=${data[i].id}" class="gift_list">
                         <div class="jscroll">
                           <div class="jscroll-inner clearfix">
                             <div class="gift_item clearfix">
@@ -54,10 +54,12 @@
                               </div>
                   
                             </div>
-                          </div>
+                          </a>
                         </div>
                   
-                      </div>`
+                      </a>
+                      `
+                      
                     }  
                     $("#substance").html(str);    
                 }
@@ -80,7 +82,7 @@ function ajax(){
             // console.log(data);
             var str="";
             for(var i=0;i<data.length;i++){
-                str+=` <div class="gift_list">
+                str+=` <a href="detail.html?item=${data[i].id}" class="gift_list">
                 <div class="jscroll">
                   <div class="jscroll-inner clearfix">
                     <div class="gift_item clearfix">
@@ -98,10 +100,10 @@ function ajax(){
                       </div>
           
                     </div>
-                  </div>
+                  </a>
                 </div>
           
-              </div>`
+              </a>`
             }  
             $("#substance").html(str);    
         }
