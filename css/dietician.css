@@ -95,13 +95,13 @@
     padding:0 0 0.6827rem 0.5975rem;
 }
 .p-col-2 ul{
-    display: flex;
-    justify-content:space-around;
+    width: 100%;
 }
 .p-col-2 li{
-    width: 7.424rem;
+    float: left;
     height:12.6934rem;
     margin: 0.1707rem 0.192rem;
+    width: 45%;
 }
 .p-col-2 .p-img img{
     width: 7.424rem;
