@@ -1,0 +1,179 @@
+.content{
+    min-width: 320px;
+    max-width: 750px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    position: relative;
+}
+.content .toolbar{
+    background: #fff;
+    width: 100%;
+    z-index: 100;
+}
+.content .toolbar .top-bar{
+    position: relative;
+    text-align: center;
+    font-size: 0.6827rem;
+    padding: 0.2987rem 0;
+    border-bottom: #dcdcdc 1px solid;
+    line-height: 1.28rem;
+    height: 1.28rem;
+}
+.content .toolbar .top-bar a{
+   text-decoration: none;
+   display: inline-block;
+    font-size: 0.64rem;
+    padding-left: 0.384rem;
+    width: 3.072rem;
+    position: absolute;
+    left: 0;
+    top: 0.256rem; 
+    text-align: left; 
+}
+.content .toolbar .top-bar a img{
+    display: block;
+    float: left;
+    width: 0.2987rem;
+    height: 0.64rem;
+    margin-top: 0.32rem;
+    margin-left: 0.32rem
+}
+
+/*详情*/
+.m-details{
+    padding: 0 0.6827rem;
+}
+.m-details .details-title {
+    text-align: center;
+    font-size: 1.0667rem;
+    color: #333;
+    padding: 1.664rem 0 1.3654rem;
+}
+.m-details .details-t{
+    width: 6.4rem;
+    margin: 0 auto;
+    text-align: center;
+}
+.details-t img {
+    width: 1.1094rem;
+    height: 1.1094rem;
+    border-radius: 50%;
+    float: left !important;
+}
+.details-t .tet-01 {
+    margin-left: 1.3227rem;
+}
+.details-t span{
+    display: block;
+    text-align: left;
+}
+.tet-01 .title{
+    font-size: 0.5547rem;
+    color: #333;
+}
+.tet-01 .times{
+    font-size: 0.4267rem;
+    color:#b7b7b7;
+}
+
+.relevant{
+    padding-bottom: 1.0667rem;
+}
+.special-banner{
+    width: 100%;
+    font-size: 0;
+    padding-bottom:1.92rem;
+}
+.special-banner img{
+    width: 100%;
+}
+/* 相关食材 */
+.relevant .r-title{
+    font-size:0.768rem;
+    color:#000;
+    padding:0 0 0.6827rem 0.5975rem;
+}
+.p-col-2 ul{
+    display: flex;
+    justify-content:space-around;
+}
+.p-col-2 li{
+    width: 7.424rem;
+    height:12.6934rem;
+    margin: 0.1707rem 0.192rem;
+}
+.p-col-2 .p-img img{
+    width: 7.424rem;
+    height:7.424rem;
+    border-radius:0.128rem;
+    display:block;
+}
+.p-info .p-lable{
+    height: 0.576rem;
+}
+.p-col-2 .p-lable{
+    margin-top: 0.384rem;
+    font-size:0.384rem;
+}
+.p-info .p-lable span{
+    display: inline-block;
+    height:0.576rem;
+    line-height: 0.576rem;
+    padding:0 0.384rem;
+    color:#fff;
+}
+.p-info .p-lable .sp2{
+    background-color: #f5724b;
+    border-radius:0.065rem;
+}
+.p-info .p-lable .sp1{
+    background-color: #f5c41c;
+    border-radius:0.064rem;
+}
+.p-col-2 .p-name{
+    margin-top: 0.2347rem;
+    font-size: 0.512rem;
+    color:#000;
+}
+.omit1{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.p-col-2 .p-describe {
+    margin-top: 0.0854rem;
+    font-size: 0.512rem;
+    color: #979797;
+}
+.p-col-2 .p-format{
+    margin-top: 0.1707rem;
+    height:0.567rem;
+    font-size: 0.384rem;
+    color:#979797;
+}
+.p-col-2 .p-price{
+    margin-top: 0.0854rem;
+    font-size: 0.5674rem;
+    color:#ff8200;
+    overflow: hidden;
+}
+/*底部*/
+.menu-details-footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    z-index: 999;
+    text-align: right;
+    background: #fff;
+    height: 2.0907rem;
+    border-top:1px solid #eee;
+    line-height: 2.0907rem;
+}
+.menu-details-footer img{
+    position: relative;
+    top:0.0854rem;
+    right:1.323rem;
+    width: 0.8747rem; 
+}
