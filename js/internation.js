@@ -16,10 +16,6 @@ var swiper = new Swiper('.swiper-container3', {
 });
 //     < !--分类开始 -->
 $('.swiper-slide3').tap(function () {
-        // $(this)[0].style.backgroundColor = 'rgba(97,49,192)'
-        // for (var i = 0; i < 5; i++) {
-        //         $(this).siblings()[i].style.backgroundColor = 'rgba(116,65,217)'
-        // }
         $(this).addClass('active')
         $(this).siblings().removeClass('active')
         $('.keyword').show()
@@ -93,9 +89,6 @@ $(document).scroll(function () {   //页面加载时，获取滚动条初始高�
 //                 $(this).siblings()[i].style.color = 'black'
 //         }  
 // })
-// $('.mtop-in1').tap(function(){
-// })
-
 $('.swiper-slide3').tap(function(){
         if ($(this).text() !='热卖推荐'){
                 $.ajax({
@@ -103,34 +96,22 @@ $('.swiper-slide3').tap(function(){
                         url: './php/class.php',
                         data: 'class=' + $(this).text(),
                         success: function (data) {
-                                // console.log(JSON.parse(data));  
-                                // console.log($('.p-col-two ul li').length);
                                 const information = JSON.parse(data)
                                 console.log(information);
                                 const length = $('.p-col-two ul li').length
-                                // console.log(length);
-                                // console.log($('.p-col-two ul li a div img').attr('src') );
                                 $('.p-col-two ul li a div img').each(function (index) {
-                                        // console.log($(this));
                                         $(this).attr('src', information[index].img)
                                 })
                                 $('.goProduct .p-name').each(function (index) {
-                                        // console.log($(this));
-                                        // console.log($(this).text());
-                                        
                                         $(this).text(information[index].itemname)
                                 })
                                 $('.p-bottom .p-price .sp').each(function (index){
-                                        // console.log($(this));
-                                        // console.log($(this).text());
+
                                         $(this).text(information[index].price)
                                 })
                                 $('.p-col-two ul li a').each(function (index) {
-                                        // console.log($(this));
                                         console.log($(this).attr('href', 'detail.html?itemid'+'=' +information[index].id));
                                 })
-
-
                         }
                 })
         }

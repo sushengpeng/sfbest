@@ -22,7 +22,7 @@
 .ht-menu-box{width: 100%;}
 .ht-menu-box ul{display: flex;justify-content: space-between;width: 100%;}
 .ht-menu-box ul li{width: 20%}
-.ht-menu-box a div{width: 60%;margin: 0 auto;}
+.ht-menu-box a div{width: 65%;margin: 0 auto;}
 .ht-menu-item a img{width: 100%;}
 .ht-menu-item span{display: block;color: black;font-size: 0.4694rem;}
 .ht-menu-item a{text-decoration: none;}
