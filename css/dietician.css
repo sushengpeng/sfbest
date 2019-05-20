@@ -30,6 +30,7 @@
     left: 0;
     top: 0.256rem; 
     text-align: left; 
+    -webkit-tap-highlight-color:transparent
 }
 .content .toolbar .top-bar a img{
     display: block;
