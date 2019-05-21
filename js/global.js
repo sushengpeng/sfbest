@@ -59,7 +59,11 @@ window.localStorage.shopping = ''
 let shoppingcart = window.localStorage.shopping
 // console.log(loginstatus)
 $(".p-cart").on("touchend",function () {
+<<<<<<< HEAD
     let itemid = $(this).attr('productid') || getRequest()
+=======
+    let itemid = $(this).attr('productid')
+>>>>>>> c57185cd69a16d84ac39647abd8ec492a4d587f3
     let username = 'zhangfeiyue'
     let num = $('.num').text() || 1 //有num的时候传入num中的数据，没有默认为1
     if(loginstatus){

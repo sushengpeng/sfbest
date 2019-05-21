@@ -18,3 +18,14 @@
         $(".menuSpan").eq(c1).addClass("find-active").siblings().removeClass("find-active")
     })
  })()
+
+
+ //发起ajax
+//  $.ajax({
+//    url:"../php/class.php",
+//    data:{class:"补钙"},
+//    dataType:"json",
+//    success:function(data){
+//           console.log(data)
+//    }
+//  })
