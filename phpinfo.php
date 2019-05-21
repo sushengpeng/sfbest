@@ -22,4 +22,9 @@
  phpinfo();
 ?><?php
  phpinfo();
+<<<<<<< HEAD
+=======
+?><?php
+ phpinfo();
+>>>>>>> c57185cd69a16d84ac39647abd8ec492a4d587f3
 ?>
