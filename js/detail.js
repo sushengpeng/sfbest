@@ -5,6 +5,7 @@ var swiper = new Swiper('.swiper-container1', {
 //  < !--同类推荐 -->
 var swiper = new Swiper('.swiper-container2', {
     slidesPerView: 3,
+    spaceBetween: 30,
 });
 //顶部
 $('.tabs .object')[0].style.display = "block"
@@ -78,6 +79,21 @@ function getRequest(str) {
 $('.title-a').tap(function(){
     window.history.go(-1)
 })
+// 加入购入车
+var num=0;
+$('.icon_plus').tap(function(){
+    num+=1;
+    $('#p-num').attr('value', num)
+    $('.cart-bg span').text(num)
+})
+$('.icon_minus').tap(function () {
+    if(num>=1){
+        num -= 1;
+    }
+    $('#p-num').attr('value', num)
+    $('.cart-bg span').text(num)
+})
+
 
 
 

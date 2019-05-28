@@ -1,7 +1,8 @@
 <?php
     include "conn.php";
     $gift=$_REQUEST["gift"];
-    $sql="select * from t_itemlist where gift='$gift' limit 6";
+    // $sql="select * from t_itemlist where gift='$gift' limit 6";
+    $sql="select * from t_itemlist where gift='$gift'";
     $result=$conn->query($sql);
     if($result->num_rows>0){
         while($row=mysqli_fetch_assoc($result)){       

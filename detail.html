@@ -76,7 +76,7 @@
                         <div class="lable fl">数量</div>
                         <div class="p-num-input fl">
                             <span class="icon_minus" maxnum="173" minnum="1"></span>
-                            <input type="tel" name="" value="1" id="p-num">
+                            <input type="tel" name="" value="0" id="p-num" class="num">
                             <span class="icon_plus" maxnum="173" minnum="1"></span>
                         </div>
                     </div>
@@ -283,8 +283,9 @@
                     <div class="service-bg"></div>
                     <div class="cart-bg"><span>0</span></div>
                     <div class="index-bg"></div>
-                    <div id="addshoppingcart" addprice="0">加入购物车 </div>
-                    <div id="buyproduct" class="buy-btn buy-btn-ht" onclick="buyproduct();return false;">一键购买</div>
+                    <div id="addshoppingcart" addprice="0" class="p-cart">加入购物车 </div>
+                    <!-- <div id="buyproduct" class="buy-btn buy-btn-ht" onclick="buyproduct();return false;">一键购买</div> -->
+                    <div id="buyproduct" class="buy-btn buy-btn-ht">一键购买</div>
                 </div>
 
 
@@ -292,7 +293,6 @@
     
     <script src="./js/swiper.js"></script>
     <script src="./js/zepto.min.js"></script>
-    
     <script src="./js/fx.js"></script>
     <script src="./js/touch.js"></script>
     <script src="./js/global.js"></script>

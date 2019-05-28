@@ -1,7 +1,8 @@
 <?php
     include "conn.php";
     $class = $_REQUEST['class'];
-    $sql="SELECT * FROM t_itemlist where class='$class' limit 6";
+    // $sql="SELECT * FROM t_itemlist where class='$class' limit 6";
+    $sql="SELECT * FROM t_itemlist where class='$class'";
     $result=$conn->query($sql);
     // echo $sql;
     if($result->num_rows>0){
